@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telphone=no">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+    <title>幸运大转盘</title>
+    <style>
+        html{margin:0; padding:0;height: 100%}
+        input{
+            background:none;
+            outline:none;
+            border:0px;
+            font-size: 14px;
+            text-indent: 6px;
+            width: 120px;
+        }
+        body{background: #fff;margin:0;height: 100%;background: url("./images/首页-背景.png")center top no-repeat;background-size: cover}
+        .link-left{color:rgb(248,168,71);font-size: 12px;float: left;margin-left: 20px}
+        .link-right{color:rgb(248,168,71);font-size: 12px;float: right;margin-right: 20px}
+        .message{height: 220px;background: transparent}
+        .draw{position:relative;top:6px;line-height:24px;font-size: 14px;border:1px solid rgb(248,168,71);border-radius: 4px;background: rgba(0,0,0,0.7);height: 24px;width: 70%;margin:auto;color: white;text-align: center;}
+        .award{color:rgb(248,168,71);}
+        .cycle{position: relative;height: 200px;width: 200px;margin: auto;background: url("./images/首页-转盘背景.png")no-repeat;background-size: contain}
+        .cycle-image1{position: absolute;top:30px;left: 87px;background: black;width: 20px;height: 20px}
+        .cycle-image2{position: absolute;top:55px;left: 137px;background: black;width: 20px;height: 20px}
+        .cycle-image3{position: absolute;top:115px;left: 137px;background: black;width: 20px;height: 20px}
+        .cycle-image4{position: absolute;top:140px;left: 87px;background: black;width: 20px;height: 20px}
+        .cycle-image5{position: absolute;top:115px;left: 37px;background: black;width: 20px;height: 20px}
+        .cycle-image6{position: absolute;top:55px;left: 37px;background: black;width: 20px;height: 20px}
+
+        .arrow{position: absolute;top:60px;left: 63px;width: 70px;height: 70px;margin: auto;background: url("./images/首页-抽奖指针.png")no-repeat;background-size: contain}
+        .arrow.active1{transform:rotate(3675deg);transition: 3s}
+        .arrow.active2{transform:rotate(3775deg);transition: 3s}
+        .chance{margin: 10px auto 0 auto;width:116px;height: 36px;text-align:center;font-size: 12px;color: white;line-height: 20px;padding: 0 4px;background: url("./images/首页-剩余抽奖数量.png")no-repeat;background-size: contain}
+        .chance-number{color:rgb(248,168,71);font-size: 14px}
+        .share{margin-top: 20px;height:42px;background: url("./images/首页-分享按钮.png")center top no-repeat;background-size: contain}
+        .share-detail{margin-top: 4px;color:rgb(248,168,71);font-size: 12px;text-align: center}
+        .share-qrCode{width: 88px;height: 88px;background: rgb(254,233,179);margin: 20px auto 0 auto}
+        .share-open{color: rgb(254,233,179);margin-top: 6px;text-align: center;font-size: 12px;margin-bottom: 40px;-webkit-transform:scale(0.8);transform:scale(0.8)}
+        .share-container{z-index: 10;position: fixed;top:0;bottom: 0;width: 100%;background: rgba(0,0,0,0.7);text-align: center}
+        .share-close{color: white;font-size: 16px;height: 40px;line-height: 40px;width: 160px;border: 1px solid white;border-radius: 40px;margin:100px auto 0 auto}
+        .draw-win{z-index: 10;position: fixed;top:0;bottom: 0;width: 100%;background: rgba(0,0,0,0.5);text-align: center}
+        .win-form{z-index: 30;position:fixed;top:130px;background: url("./images/中奖-外框.png")no-repeat;width: 289px;margin-left: -145px;left:50%;background-size: contain;padding-bottom: 20px}
+        .win-form .input{margin:4vw 6vw;border: 1px solid black;height: 34px;line-height: 34px;border-radius: 6px;}
+        .win-form .input .title{font-size: 14px;background: rgb(254,213,55);text-align: center;display: inline-block;float: left;width: 70px;border-bottom-left-radius: 5px;border-top-left-radius: 5px;border-right: 1px solid black}
+        .qrCode{background: rgba(0,0,0,0.7);z-index: 10;position: fixed;top:0;bottom: 0;width: 100%;}
+        .qrCode-image{width: 200px;height: 200px;background: white;margin:100px auto;}
+        .qrCode-button{border: 1px solid white;border-radius: 50px;font-size: 18px;height: 40px;width: 160px;color: white;text-align: center;line-height: 40px;margin: auto}
+        .draw-lose{padding-top: 100px;z-index: 10;position: fixed;top:0;bottom: 0;width: 100%;background: rgba(0,0,0,0.7);text-align: center}
+        .toast{text-align: center;position: fixed;bottom: 50px;width: 100%}
+        .toast-detail{height: 25px;line-height: 25px;background: rgba(0,0,0,0.8);color: white;border-radius: 20px;    padding: 4px 12px 6px 12px;}
+        .my-award{color: #F8A847;z-index: 30;position:fixed;top:130px;background: url("./images/我的奖品-外框.png")no-repeat;width: 289px;margin-left: -145px;left:50%;background-size: contain;padding-bottom: 20px;height: 269px}
+        .my-award-submit{float: right;    margin: 4px 30px 0 0;}
+        .my-award-container{height: 38px}
+        .my-award-detail{float: left;margin: 10px 0 0 30px;}
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="toast">
+    </div>
+    <div style="display: none" class="qrCode">
+        <div class="qrCode-image"></div>
+        <div class="qrCode-button">我已关注</div>
+    </div>
+    <div class="message">
+        <div style="display: none" class="draw"></div>
+    </div>
+    <div style="height: 20px">
+        <span class="link-left">活动介绍 ></span>
+        <span class="link-right">我的奖品 ></span>
+        <div style="display: none" class="draw-win award">
+            <div class="my-award">
+                <img class="my-award-close" style="position: relative;left: 145px;top: -8px;padding-bottom: 14px;" width="32" src="./images/我的奖品-退出.png"/>
+
+            </div>
+        </div>
+    </div>
+    <div class="cycle">
+        <div class="arrow"></div>
+        <div class="cycle-image1"></div>
+        <div class="cycle-image2"></div>
+        <div class="cycle-image3"></div>
+        <div class="cycle-image4"></div>
+        <div class="cycle-image5"></div>
+        <div class="cycle-image6"></div>
+    </div>
+    <div style="display: none" class="draw-win">
+        <img width="100%" src="./images/中奖-背景.png">
+        <div class="win-form">
+            <img class="win-form-close" style="position: relative;left: 145px;top: -8px;" width="32" src="./images/中奖-退出按钮.png"/>
+            <div style="background: white;margin:8px 6vw 0 6vw;height: 100px"></div>
+            <div class="input">
+                <div class="title">姓名</div>
+                <input type="text" placeholder="请输入您的姓名" class="detail"/>
+            </div>
+            <div class="input">
+                <div class="title">电话</div>
+                <input type="text" placeholder="请输入您的电话" class="detail"/>
+            </div>
+            <div class="input">
+                <div class="title">姓名</div>
+                <input type="text" placeholder="请输入您的收货地址" class="detail"/>
+            </div>
+            <img class="win-form-submit" style="margin-top: -4px" width="116" src="./images/中奖-领取按钮.png" />
+        </div>
+    </div>
+    <div style="display: none" class="draw-lose">
+        <img style="margin: auto" width="279" src="./images/没中奖-外框.png"/>
+        <img style="margin: auto;position: relative;top: -60px;display: block" width="116" src="./images/没中奖-继续抽奖.png"/>
+    </div>
+    <div class="chance">
+        <div style="position: relative;top:10px;left: 8px;-webkit-transform:scale(0.8);transform:scale(0.8)">你还有<span class="chance-number">3次</span>抽奖机会!</div>
+    </div>
+    <div class="share"></div>
+    <div style="display: none" class="share-container">
+        <div style="text-align: right;margin:15px 15px 0 0"><img width="80%" src="./images/分享提示.png" /></div>
+        <div class="share-close">我知道了</div>
+    </div>
+    <div class="share-detail">分享可获得一次抽奖机会！</div>
+    <div style="text-align: center;margin-top: 15px" >
+        <img width="88%"src="./images/首页-活动规则.png">
+    </div>
+    <div class="share-qrCode"></div>
+    <div class="share-open">牙侦探事务所公众号</div>
+</div>
+</body>
+<script src="./js/jquery.js"></script>
+<script>
+    //拿toast
+  function getToast(text) {
+    $('.toast').append("<div style='margin-top: 20px'><span class=\"toast-detail\">"+text+"</span></div>")
+    try{
+      window.setTimeout(function () {
+        $('.toast-detail:first-child').remove()
+      },1000)
+    }catch (e){}
+  }
+  function getMessage(){
+    var number = 135 + '****' + (Math.random() * 10000).toFixed(0);
+    $(".draw").html("恭喜 "+ number +" 获得 <span class='award'>奖品名称</span>").fadeIn(function () {
+      window.setTimeout(function () {
+        $(".draw").fadeOut()
+      },2000)
+    })
+  }
+  getMessage();
+window.setInterval(getMessage,5000);
+    $(".share").click(function () {
+      $(".share-container").show()
+    });
+    $(".share-container").click(function () {
+      $(".share-container").hide()
+    })
+    
+    function draw(type) {
+        switch (type) {
+          case '1':
+            //中奖
+            $(".arrow").addClass('arrow active1');
+            window.setTimeout(function () {
+              $(".draw-win").show();
+              $("body").css("position","fixed");
+              $(".arrow").removeClass('active1');
+            },3500);
+            break;
+          case '2':
+            //没中奖
+            $(".arrow").addClass('arrow active2');
+            window.setTimeout(function () {
+              $(".draw-lose").show();
+              $(".arrow").removeClass('active2');
+            },3500);
+            break
+
+          //其他的自己定义
+        }
+    }
+    //抽奖方法
+    $(".arrow").click(function () {
+      draw('1')
+    });
+    //中奖
+    $(".win-form-close").click(function () {
+      $(".draw-win").hide()
+      $("body").css("position","relative")
+    });
+    $(".win-form-submit").click(function () {
+      $(".draw-win").hide()
+      $("body").css("position","relative")
+      $(".qrCode").show()
+    })
+  //现实二维码方法
+  $(".qrCode-button").click(function () {
+    $(".qrCode").hide()
+  })
+  //没中奖
+    $(".draw-lose").click(function () {
+      $(".draw-lose").hide()
+    })
+   //我的奖品
+    function getMyreward(data) {
+      var html = '';
+      data.forEach(function (item) {
+        html += '<div class="my-award-container"><span class="my-award-detail">'+item.name+'</span><img class="my-award-submit" width="65" src="./images/我的奖品-领取按钮.png" /></div>'
+      });
+      $('.my-award').append(html)
+    }
+    getMyreward([
+      {
+        id:0,
+        name:'奖品1'
+      },
+      {
+        id:1,
+        name:'奖品2'
+      },
+      {
+        id:3,
+        name:'奖品4'
+      },
+    ]);
+    $('.my-award-close').click(function () {
+      $('.draw-win.award').hide()
+      $("body").css("position","relative")
+    })
+    $('.link-right').click(function () {
+      $('.draw-win.award').show()
+    })
+
+</script>
+</html>

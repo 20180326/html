@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telphone=no"> 
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+<title>牙侦探 - 直播</title>
+<!-- 引入 WeUI -->
+<script>
+    function a() {
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+        document.getElementsByTagName("html")[0].style.height = "auto";
+        
+    }
+    var b = null;
+    window.addEventListener("resize", function() {
+    clearTimeout(b), b = setTimeout(a, 1)
+    }, !1), a();
+</script>
+<link href="./css/index.css?1" type="text/css" rel="stylesheet">
+<style type="text/css">
+.vcp-player{position:relative;z-index:0;font-family:Tahoma,'\5FAE\8F6F\96C5\9ED1',\u5b8b\u4f53,Verdana,Arial,sans-serif;background-color:#000}
+.vcp-player video{display:block;overflow:hidden}
+.vcp-fullscreen video,.vcp-fullscreen.vcp-player{width:100%!important;height:100%!important}
+body.vcp-full-window{width:100%!important;height:100%!important;overflow-y:auto}
+.vcp-full-window .vcp-player{position:fixed;left:0;top:0}
+.vcp-pre-flash{z-index:1000;background:#000;width:100%;height:100%;position:absolute;top:0;left:0}
+.vcp-controls-panel{position:absolute;bottom:0;width:100%; height:.8rem;z-index:1000}
+.vcp-controls-panel.show{-webkit-animation:fadeIn ease .8s;animation:fadeIn ease .8s;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards}
+.vcp-controls-panel.hide{-webkit-animation:fadeOut ease .8s;animation:fadeOut ease .8s;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards}
+.vcp-panel-bg{width:100%;height:100%;position:absolute;left:0;top:0;background:-webkit-linear-gradient(top,rgba(255,255,255,0), rgba(0,0,0,.5)); opacity: .8;filter:alpha(opacity=80);z-index:1000}
+.vcp-playtoggle{cursor:pointer;position:relative;z-index:1001;margin-left:.1rem; width:.8rem; height:100%;float:left;  }
+.vcp-playtoggle:focus,.vcp-playtoggle:hover{background-color:#708090;opacity:.9;filter:alpha(opacity=90)}
+.touchable .vcp-playtoggle:hover{background-color:transparent;opacity:1}
+.vcp-playing .vcp-playtoggle{ background:url(./images/pause.png) center no-repeat; background-size:.54rem auto; }
+.vcp-bigplay{width:100%;height:80%;position:absolute;background-color:#fff\9;filter:alpha(opacity=0);opacity:0;z-index:1000;top:0;left:0}
+.vcp-slider{position:relative;z-index:1001;float:left;background:#c4c4c4;height:10px;opacity:.8;filter:alpha(opacity=80);cursor:pointer}
+.vcp-slider .vcp-slider-track{width:0;height:100%;margin-top:0;opacity:1;filter:alpha(opacity=100);background-color:#1e90ff}
+.vcp-slider .vcp-slider-thumb{cursor:pointer;background-color:#fff;position:absolute;top:0;left:0;border-radius:1em!important;height:10px;margin-left:-5px;width:10px}
+.vcp-slider-vertical{position:relative;width:.5em;height:8em;top:-5.6em;z-index:1001;background-color:#1c1c1c;opacity:.9;filter:alpha(opacity=90);cursor:pointer}
+.vcp-slider-vertical .vcp-slider-track{background-color:#1275cf;width:.5em;height:100%;opacity:.8;filter:alpha(opacity=80)}
+.vcp-slider-vertical .vcp-slider-thumb{cursor:pointer;position:absolute;background-color:#f0f8ff;width:.8em;height:.8em;border-radius:.8em!important;margin-top:-.4em;top:0;left:-.15em}
+.vcp-timeline{top:-10px;left:0;height:10px;position:absolute;z-index:1001;width:100%}
+.vcp-timeline .vcp-slider-thumb{top:-4px}
+.vcp-timeline .vcp-slider{margin-top:8px;height:2px;width:100%}
+.vcp-timeline:hover .vcp-slider{margin-top:0;height:10px}
+.vcp-timeline:hover .vcp-slider-thumb{display:block;width:16px;height:16px;top:-3px;margin-left:-8px}
+.vcp-timelabel{display:inline-block;line-height:.8rem;height:.8rem;float:left;color:#fff; font-size:.24rem; padding:0 9px;z-index:1001;position:relative}
+.vcp-volume{height:3em;width:3em;cursor:pointer;position:relative;z-index:1001;float:right;background-color:transparent;opacity:.9;filter:alpha(opacity=90)}
+.vcp-volume-icon{display:inline-block;width:.8rem;height:.8rem;position:absolute;left:0;top:0}
+.vcp-volume-muted .vcp-volume-icon{background-image:url(//imgcache.qq.com/open/qcloud/video/vcplayer/img/muted.png);background-image:url(//imgcache.qq.com/open/qcloud/video/vcplayer/img/muted.svg),none}
+.vcp-volume .vcp-slider-vertical{top:-8.4em;left:1em;display:none}
+.vcp-volume .vcp-slider-track{position:absolute;bottom:0}
+.vcp-volume:hover .vcp-slider-vertical{display:block}
+.vcp-volume .vcp-volume-bg{height:8.8em;width:2em;position:absolute;left:.25em;top:-8.8em;background:#242424;display:none}
+.vcp-volume:hover .vcp-slider-vertical,.vcp-volume:hover .vcp-volume-bg{display:block}
+.vcp-fullscreen-toggle{position:relative;width:.8rem;height:.8rem;float:right;cursor:pointer;z-index:1001; background:url(./images/full.png) center no-repeat; background-size:.54rem auto; margin-right: .1rem;}
+.vcp-fullscreen .vcp-fullscreen-toggle{background-image:url(//imgcache.qq.com/open/qcloud/video/vcplayer/img/fullscreen_exit.png);background-image:url(//imgcache.qq.com/open/qcloud/video/vcplayer/img/fullscreen_exit.svg),none}
+.vcp-loading{position:absolute;left:50%;top:50%;margin-top:-3em;display:none}
+.vcp-poster{position:absolute;left:0;top:0;overflow:hidden;z-index:1000;width:100%;height:100%;display:none}
+.vcp-poster-pic{position:relative}
+.vcp-poster-pic.default{left:50%;top:50%;-ms-transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
+.vcp-poster-pic.cover{width:100%;left:50%;top:50%;-ms-transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
+.vcp-poster-pic.stretch{width:100%;height:100%}
+.vcp-error-tips{position:absolute;z-index:1001;width:100%;height:4.5em;left:0;top:50%;color:#ff4500;margin-top:-5.25em;text-align:center;display:none}
+.vcp-clarityswitcher{height:3em;width:3em;cursor:pointer;position:relative;z-index:1001;float:right;background-color:transparent;opacity:.9}
+.vcp-vertical-switcher-container{width:3em;position:absolute;left:0;bottom:2.4em;background:#242424;display:none}
+.vcp-vertical-switcher-current{display:block;color:#fff;text-align:center;line-height:3em}
+.vcp-vertical-switcher-item{display:block;color:#fff;text-align:center;line-height:2em}
+.vcp-vertical-switcher-item.current{color:#888}
+@-webkit-keyframes fadeOut{from{opacity:1}
+to{opacity:0}
+}
+@keyframes fadeOut{from{opacity:1}
+to{opacity:0}
+}
+.fadeOut{-webkit-animation:fadeOut ease .8s;animation:fadeOut ease .8s;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards}
+@-webkit-keyframes fadeIn{from{opacity:0}
+to{opacity:1}
+}
+@keyframes fadeIn{from{opacity:0}
+to{opacity:1}
+}
+.fadeIn{-webkit-animation:fadeIn ease .8s;animation:fadeIn ease .8s;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards}
+
+
+</style>
+<style type="text/css">
+</style>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body style="margin:0">
+<!--视频 -->
+
+<div class="video-div" id="id_test_video">
+    <div class="vcp-player touchable vcp-playing" style="width: 100%;height: 100%">
+<!--         <video preload="auto" autoplay="true" webkit-playsinline="" playsinline="" x-webkit-airplay="allow" x5-video-orientation="undefined" src="./WeChatSight5084.mp4" style="width: 100%; background:url(http://img05.tooopen.com/images/20150820/tooopen_sy_139205349641.jpg) center no-repeat; background-size:100% 100%;"></video> -->
+
+    <video class="videoPlay" x-webkit-airplay="true" webkit-playsinline="" playsinline="" poster="http://img05.tooopen.com/images/20150820/tooopen_sy_139205349641.jpg" src="./WeChatSight5084.mp4" controls="" style="width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    background: center no-repeat;
+    background-size: 100% auto;
+    object-fit: cover;position: static;"></video>
+        
+<!--         <div class="vcp-poster" style="display: none;">
+            <img class="vcp-poster-pic default">
+        </div>
+        <div class="vcp-bigplay">
+        </div> -->
+<!--         <div class="vcp-controls-panel">
+            <div class="vcp-panel-bg">
+            </div>
+            <div class="vcp-playtoggle">
+            </div>
+            <span class="vcp-timelabel"></span>
+            <div class="vcp-timeline">
+                <div class="vcp-slider">
+                    <div class="vcp-slider-track">
+                    </div>
+                    <div class="vcp-slider-thumb">
+                    </div>
+                </div>
+            </div>
+            <div class="vcp-fullscreen-toggle">
+            </div>
+        </div> -->
+       
+    </div>
+</div>
+
+<!--end 视频 -->
+<div class="liveTab">
+    <ul>
+        <li>
+            <span>简介</span>
+        </li>
+        <li  class="active">
+            <span>聊天</span>
+        </li>
+        <li>
+            <span>产品</span>
+        </li>
+        <li style="background: rgb(200,34,41)">
+            <span style="color: white;">关注</span>
+        </li>
+    </ul>
+</div>
+<div style="display: none" class="QRcode">
+    <div class="QRcode-container">
+        <div class="QRcode-title">长按关注 <span>牙侦探</span> 公众号</div>
+        <div class="QRcode-image"></div>
+        <div class="QRcode-detail">关注后可获得一次抽奖机会哦～</div>
+    </div>
+    <div class="QRcode-close">我知道了</div>
+</div>
+<div class="tablistContent tabSign1" style="display:none">
+    <div class="liveInfoLayout">
+        <div class="liveInfoTitle">主播简介</div>
+        <p>主播简介主播简介主播简介主播简介主播简介主播简介主播简介主播简介主播简介主播简介</p>
+    </div>
+    <div class="liveInfoLayout">
+        <div class="liveInfoTitle">课程内容</div>
+        <p>课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容课程内容</p>
+    </div>
+</div>
+<div id="j-msgList" class="msgList tablistContent tabSign2" >
+    <div>
+    <div class="ltxxList">
+        <div class="ltxx">
+            <span>zlx: </span><span>很不错错错错的方法</span>
+        </div>
+    </div>
+    <div class="ltxxList">
+        <div class="ltxx">
+            <span>zlx耳朵: </span><span>hddddddddddddddddddddddddddeeeeeeeeehddddddddddddddddddddddddddeeeeeeeee</span>
+        </div>
+    </div><div class="ltxxList">
+        <div class="ltxx">
+            <span>多萨德: </span><span>hasdsadsadd</span>
+        </div>
+    </div><div class="ltxxList">
+        <div class="ltxx">
+            <span>多萨德de猜得到: </span><span>多萨德撒的方法疯疯癫癫</span>
+        </div>
+    </div>
+    <div class="ltxxList">
+        <div class="ltxx">
+            <span>zlx撒旦: </span><span>hddddddddddddeeeeeeee</span>
+        </div>
+    </div>
+    <div class="ltxxList">
+        <div class="ltxx">
+            <span>zlx: </span><span>很不错错错错的方法</span>
+        </div>
+    </div>
+    <div class="ltxxList">
+        <div class="ltxx">
+            <span>zlx耳朵: </span><span>hddddddddddddddddddddddddddeeeeeeeeehddddddddddddddddddddddddddeeeeeeeee</span>
+        </div>
+    </div><div class="ltxxList">
+        <div class="ltxx">
+            <span>多萨德: </span><span>hasdsadsadd</span>
+        </div>
+    </div><div class="ltxxList">
+        <div class="ltxx">
+            <span>多萨德de猜得到: </span><span>多萨德撒的方法疯疯癫癫</span>
+        </div>
+    </div>
+    <div class="ltxxList">
+        <div class="ltxx">
+            <span>zlx撒旦: </span><span>hddddddddddddeeeeeeee</span>
+        </div>
+    </div>
+    </div>
+    
+</div>
+<div class="tablistContent tabSign3" style="display: none">
+    <div class="imgContent">
+    <p>
+    <img src="http://img30.360buyimg.com/cf/jfs/t11995/106/2130202398/190415/46ba44bc/5a126989N84d19247.jpg">
+    <img src="http://img30.360buyimg.com/cf/jfs/t11884/82/2162527234/219910/246ae8fa/5a126993N78aebb36.jpg">
+    <img src="http://img30.360buyimg.com/cf/jfs/t12169/223/764434632/506743/75ef8c14/5a12699eN97de67e1.jpg">
+    <img src="http://img30.360buyimg.com/cf/jfs/t13906/182/712950228/192601/1b764033/5a1269a7Nea94430a.jpg">
+    <img src="http://img30.360buyimg.com/cf/jfs/t13906/198/718202723/509910/5d187379/5a1269b2Nf327209c.jpg">
+    <img src="http://img30.360buyimg.com/cf/jfs/t12916/209/745246324/164368/4d3bb39f/5a1269bbN50c49d9a.jpg">
+    <img src="http://img30.360buyimg.com/cf/jfs/t11308/6/2180508748/263094/5a190d6b/5a1269c5N94765c2b.jpg">
+    <img src="http://img30.360buyimg.com/cf/jfs/t12400/49/718136809/66063/28ebae06/5a1269d0Ncd9dbf4b.jpg">
+    <img src="http://img30.360buyimg.com/cf/jfs/t12172/34/734737216/420664/f7809bff/5a1269dfN0d885d5d.gif">
+    <img src="http://img30.360buyimg.com/cf/jfs/t14011/310/754539173/297844/2b223590/5a1269daN04eb03f0.jpg">
+    <img src="http://img30.360buyimg.com/cf/jfs/t13735/363/723617696/478395/97d1904f/5a1269f6Nf966be47.jpg">
+    <img src="http://img30.360buyimg.com/cf/jfs/t11929/300/2188163896/341565/2472505f/5a1269f0Nfdcc9c0b.jpg">
+    <img src="http://img30.360buyimg.com/cf/jfs/t12478/155/719752002/259028/6815d427/5a126a0aN00789769.jpg">
+    </p>
+    </div>
+    <div class="moreInfo">
+        <a href="http://www.baidu.com">了解更多</a>
+    </div>
+</div>
+<div class="sendMsg line">
+    <div class="sendMsgInput">
+        <input type="text" name="input" id="j-msg" class="input" placeholder="写评论聊看点">
+    </div>
+    <span>发送</span>
+</div>
+<a href="./draw.html" class="drawChange on">
+    <em></em>
+    <span></span>
+</a>
+<a href="./invite.html" class="drawChange invite">
+    <em></em>
+</a>
+</body>
+<script src="./js/jquery.js"></script>
+<script src="./js/main.js?12"></script>
+<script>
+    var ua = navigator.userAgent
+    window.isIos = ua.match(/(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/)
+    window.isAndroid = ua.match(/(Android);?[\s\/]+([\d.]+)?/)
+
+    function direction() {
+        if (isIos && (window.orientation == 90 || window.orientation == -90)) {
+        //ipad、iphone竖屏
+        return true;
+        }
+        else if (isIos && (window.orientation == 0 || window.orientation == 180)) {
+        //ipad、iphone横屏
+        return false;
+        }
+        else if (isAndroid && (window.orientation == 0 || window.orientation == 180)) {
+        //ipad、iphone横屏
+        return false;
+        }
+        else if (isAndroid && (window.orientation == 0 || window.orientation == 180)) {
+        //ipad、iphone横屏
+        return true;
+        }
+    }
+    function setPageShow(show) {
+        if (show) {
+            $('.liveTab').show()
+            $('#j-msgList').show()
+            $('.sendMsg').show()
+            $('.drawChange').show()
+        } else {
+            $('.liveTab').hide()
+            $('#j-msgList').hide()
+            $('.sendMsg').hide()
+            $('.drawChange').hide()
+        }
+    }
+
+    $(function(){
+        console.log('ready')
+        $(window).on('orientationchange', function(e){
+            if (direction()) {
+                setPageShow(false)
+                $('.video-div').addClass('video-qp')
+            } else {
+                setPageShow(true)
+                $('.video-div').removeClass('video-qp')
+            }
+        })
+    })
+</script>
+</html>
