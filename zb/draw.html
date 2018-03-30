@@ -17,13 +17,13 @@
             text-indent: 6px;
             width: 120px;
         }
-        body{background: #fff;margin:0;height: 100%;background: url("./images/首页-背景.png")center top no-repeat;background-size: cover}
-        .link-left{color:rgb(248,168,71);font-size: 12px;float: left;margin-left: 20px}
-        .link-right{color:rgb(248,168,71);font-size: 12px;float: right;margin-right: 20px}
+        body{background: #fff;margin:0;background: url("./images/draw-bg.png")center top no-repeat;background-size: cover;padding-bottom: 20px;}
+        .link-left{color:#fff;font-size: 12px;float: left;margin-left: 20px}
+        .link-right{color:#fff;font-size: 12px;float: right;margin-right: 20px}
         .message{height: 220px;background: transparent}
         .draw{position:relative;top:6px;line-height:24px;font-size: 14px;border:1px solid rgb(248,168,71);border-radius: 4px;background: rgba(0,0,0,0.7);height: 24px;width: 70%;margin:auto;color: white;text-align: center;}
         .award{color:rgb(248,168,71);}
-        .cycle{position: relative;height: 200px;width: 200px;margin: auto;background: url("./images/首页-转盘背景.png")no-repeat;background-size: contain}
+        .cycle{position: relative;height: 200px;width: 200px;margin: auto;background: url("./images/draw-rotate-bg.png")no-repeat;background-size: contain}
         .cycle-image1{position: absolute;top:30px;left: 87px;background: black;width: 20px;height: 20px}
         .cycle-image2{position: absolute;top:55px;left: 137px;background: black;width: 20px;height: 20px}
         .cycle-image3{position: absolute;top:115px;left: 137px;background: black;width: 20px;height: 20px}
@@ -31,14 +31,16 @@
         .cycle-image5{position: absolute;top:115px;left: 37px;background: black;width: 20px;height: 20px}
         .cycle-image6{position: absolute;top:55px;left: 37px;background: black;width: 20px;height: 20px}
 
-        .arrow{position: absolute;top:60px;left: 63px;width: 70px;height: 70px;margin: auto;background: url("./images/首页-抽奖指针.png")no-repeat;background-size: contain}
+        .arrow{position: absolute;top:60px;left: 63px;width: 70px;height: 70px;margin: auto;background: url("./images/draw-dis.png")no-repeat;background-size: contain}
         .arrow.active1{transform:rotate(3675deg);transition: 3s}
         .arrow.active2{transform:rotate(3775deg);transition: 3s}
         .chance{margin: 10px auto 0 auto;width:116px;height: 36px;text-align:center;font-size: 12px;color: white;line-height: 20px;padding: 0 4px;background: url("./images/首页-剩余抽奖数量.png")no-repeat;background-size: contain}
         .chance-number{color:rgb(248,168,71);font-size: 14px}
-        .share{margin-top: 20px;height:42px;background: url("./images/首页-分享按钮.png")center top no-repeat;background-size: contain}
+        .share{height:42px;width: 50%;margin:20px auto;color: #fff;border-radius: 21px;text-align: center;background-color: #f69b28;}
         .share-detail{margin-top: 4px;color:rgb(248,168,71);font-size: 12px;text-align: center}
-        .share-qrCode{width: 88px;height: 88px;background: rgb(254,233,179);margin: 20px auto 0 auto}
+        .share-qrCode{width: 88px;height: 88px;background: rgb(254,233,179);display: inline-block;margin: 20px;float: right;position: relative;}
+        .share-qrCode img{position: absolute;top: 0;left: 0;width: 100%;height: 88px;}
+        .share-qrCode p{text-align: center;color: rgb(248,168,71);font-size: 12px;position: absolute;bottom: -30px;left: -56px;width: 200px;}
         .share-open{color: rgb(254,233,179);margin-top: 6px;text-align: center;font-size: 12px;margin-bottom: 40px;-webkit-transform:scale(0.8);transform:scale(0.8)}
         .share-container{z-index: 10;position: fixed;top:0;bottom: 0;width: 100%;background: rgba(0,0,0,0.7);text-align: center}
         .share-close{color: white;font-size: 16px;height: 40px;line-height: 40px;width: 160px;border: 1px solid white;border-radius: 40px;margin:100px auto 0 auto}
@@ -56,6 +58,8 @@
         .my-award-submit{float: right;    margin: 4px 30px 0 0;}
         .my-award-container{height: 38px}
         .my-award-detail{float: left;margin: 10px 0 0 30px;}
+        .share-logo{float:left;width: 114px;height: 58px;margin-top: 35px;margin-left:6%;background: url(./images/draw-logo.png) no-repeat;background-size: cover;}
+        .clearfix{content: '';clear: both;display: block;overflow: hidden;}
     </style>
 </head>
 <body>
@@ -115,7 +119,7 @@
     <div class="chance">
         <div style="position: relative;top:10px;left: 8px;-webkit-transform:scale(0.8);transform:scale(0.8)">你还有<span class="chance-number">3次</span>抽奖机会!</div>
     </div>
-    <div class="share"></div>
+    <div class="share">立即分享</div>
     <div style="display: none" class="share-container">
         <div style="text-align: right;margin:15px 15px 0 0"><img width="80%" src="./images/分享提示.png" /></div>
         <div class="share-close">我知道了</div>
@@ -124,8 +128,14 @@
     <div style="text-align: center;margin-top: 15px" >
         <img width="88%"src="./images/首页-活动规则.png">
     </div>
-    <div class="share-qrCode"></div>
-    <div class="share-open">牙侦探事务所公众号</div>
+    <div class="clearfix">
+      <div class="share-logo"></div>
+      <div class="share-qrCode">
+        <img src="" alt="">
+        <p>牙侦探事务所公众号</p>
+      </div>
+    </div>
+    
 </div>
 </body>
 <script src="./js/jquery.js"></script>
