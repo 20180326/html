@@ -76,10 +76,32 @@ body{background: #fff;margin:0;}
 .QRcode-close{font-size: 18px;color: white;border-radius: 30px;width: 150px;height: 40px;line-height: 40px;text-align: center;border: 2px solid white;margin: 40px auto 0 auto;font-weight: normal}
 .invite1{
     position: fixed;
-    bottom: 2rem;
+    bottom: 2.8rem;
     right: .3rem;
+    width: 1rem;
+    height: 1rem;
+    background: url(../images/invite.png) no-repeat;
+    background-size: 1rem .92rem;
+    background-position: top center;
 }
-
+.invite1 em{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: #4188ef;
+  font-size: 12px;
+  
+}
+.gift{
+  position: fixed;
+  bottom: 1.5rem;
+  right: .3rem;
+  width: 1rem;
+  height: 1rem;
+  background: url('../images/gift.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
 @-webkit-keyframes round {
   0% {
