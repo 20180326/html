@@ -68,7 +68,7 @@ body{background: #fff;margin:0;}
 .imgContent img{width: 100%; display: block; border:none; outline: none}
 .moreInfo{height:1rem; padding:.15rem 0; background: #d6d6d8; position: fixed; left:0; bottom:0; width: 100%; box-sizing: border-box;}
 .moreInfo a{width:2.7rem; height: .7rem; line-height: .7rem; text-align: center; display: block; margin:0 auto; color:#fff; font-size: .32rem; background: #00a0e9; border-radius: .35rem; text-decoration: none;}
-.QRcode{position: fixed;background: rgba(0,0,0,0.7);top:0;bottom: 0;left: 0;right: 0;z-index: 10}
+.QRcode{position: fixed;background: rgba(0,0,0,0.7);top:0;bottom: 0;left: 0;right: 0;z-index: 20}
 .QRcode-container{color:#333333;text-align: center;position: relative;z-index:11;width: 200px;height: 230px;margin:200px auto 0 auto;border-radius: 15px;background: white;padding: 15px 30px}
 .QRcode-title{font-size: 16px}
 .QRcode-image{width: 150px;height:150px;background: black;margin: 20px auto}
