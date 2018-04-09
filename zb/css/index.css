@@ -64,7 +64,7 @@ body{background: #fff;margin:0;}
 .drawChange em{height: 100%; width: 100%; display: block; background: url(../images/drawIcon.png) center bottom no-repeat; background-size: 1.42rem auto; position: absolute; top:0; left: 0; z-index: 10}
 .drawChange.invite{-webkit-animation: jump  .8s ease .3s both;bottom: 4rem;}
 .drawChange.invite em{height: 100%; width: 100%; display: block; background: url(../images/drawIcon.png) center bottom no-repeat; background-size: 1.42rem auto; position: absolute; top:0; left: 0; z-index: 10}
-.imgContent{padding:.24rem .24rem 1.2rem; background: #fff}
+.imgContent{padding:.24rem .24rem .2rem; background: #ebebeb;}
 .imgContent img{width: 100%; display: block; border:none; outline: none}
 .moreInfo{height:1rem; padding:.15rem 0; background: #d6d6d8; position: fixed; left:0; bottom:0; width: 100%; box-sizing: border-box;}
 .moreInfo a{width:2.7rem; height: .7rem; line-height: .7rem; text-align: center; display: block; margin:0 auto; color:#fff; font-size: .32rem; background: #00a0e9; border-radius: .35rem; text-decoration: none;}
@@ -85,6 +85,8 @@ body{background: #fff;margin:0;}
     background-position: top center;
 }
 .invite1 em{
+  position: relative;
+  top: 4px;
   display: inline-block;
   width: 100%;
   text-align: center;
@@ -101,6 +103,27 @@ body{background: #fff;margin:0;}
   background: url('../images/gift.png') no-repeat;
   background-size: cover;
   background-position: center;
+}
+.wrap-img-content{
+  position: relative;
+  margin-top: .24rem;
+}
+.wrap-img-content:first-child{
+  margin-top: 0;
+}
+.wrap-img-content img{
+  border-radius: 5px; 
+}
+.wrap-img-content .tap{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  color: #fff;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background-color: #75dbd4;
 }
 
 @-webkit-keyframes round {
