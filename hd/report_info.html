@@ -23,6 +23,21 @@
         font-family: "微软雅黑";
         font-size: 14px
     }
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+        .clearfix{*+height:1%;} 
+        .fl {
+            float: left;
+        }
+        .fr {
+            float: right;
+        }
+        .title-tip {
+            line-height: 30px;
+            background-color: #fffbaa;
+            color: #444;
+            font-size: 12px;
+            text-align: center;
+        }
 
     #title {
         padding: 10px 0 0;
@@ -32,24 +47,23 @@
     }
 
     #basic_info {
-        border-top: 2px #000 solid;
-        padding: 0 4%
+        padding: 10px 4%
     }
 
     #basic_info > p {
         display: inline-block;
         text-align: left;
-        font-size: 14px;
-        padding: 10px 0;
-        margin-right: 20px;
+        padding: 3px 0;
+        width: 49%;
+        color: #444;
+        font-size: 13px;
     }
 
     .title_2 {
-        font-weight: bolder
+        
     }
 
     #teeth_photos {
-        border-top: 2px solid #000;
         padding: 1% 0
     }
 
@@ -60,14 +74,13 @@
     }
 
     #check_result {
-        border-top: 2px solid #000;
         padding: 2% 4%
     }
 
     #teeth_photos > p {
-        text-align: right;
+        text-align: center;
         font-size: 12px;
-        color: #87cefa
+        color: #40d7cd;
     }
 
     .teethsymptom {
@@ -77,31 +90,41 @@
 
     .teethsymptom > span {
         border-radius: 5px;
-        color: #fff;
-        padding: 5px;
+        padding: 5px 10px;
         margin: 3px;
-        display: inline-block
+        display: inline-block;
+        border: 1px solid #444;
+        font-size: 12px;
+        color: #444;
     }
 
-    .teethsymptom1 {
-        background: rgb(144, 238, 144)
+    .teethsymptom > span.teethsymptom1 {
+        background-color: #ff465c;
+        color: #fff;
+        border:none;
     }
 
-    .teethsymptom2 {
-        background: rgba(255, 165, 0, 0.6)
+    .teethsymptom > span.teethsymptom2 {
+        background: rgba(255, 165, 0, 0.6);
+        color: #fff;
     }
 
-    .teethsymptom3 {
+    .teethsymptom > span.teethsymptom3 {
         background: rgba(241, 0, 0, 0.38)
+        color: #fff;   
     }
 
     .ask_btn {
-        width: 100px;
-        height: 56px;
-        margin: 5px auto;
-        background: #90ee90;
-        background-size: 100%;
-        border-radius: 14px
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        background: #40d7cd;
+        line-height: 50px;
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
     }
 
     .ask_btn > p {
@@ -161,15 +184,15 @@
         width: 220px;
         border-radius: 4px;
         padding-left: 10px;
-        border: 1px solid #93BBFE;
         box-sizing: border-box;
         color: #1f2d3d;
         font-family: inherit;
         font-size: 13px;
+        background-color: #f4f4f4;
     }
 
     #layui-layer1 {
-        border-radius: 15px
+        border-radius: 4px
     }
 
     .layui-layer-btn2 {
@@ -177,9 +200,109 @@
         height: 60px;
         text-align: center;
     }
-
+    .layui-layer-iframe .layui-layer-btn, .layui-layer-page .layui-layer-btn{
+        padding: 0;
+    }
+    .layui-layer-iframe .layui-layer-btn, .layui-layer-page .layui-layer-btn a{
+        display: inline-block;
+        width: 50%;
+        box-sizing: border-box;
+        margin: 0;
+        border-radius: 0;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-color: #d2d3d5;
+        background-color: #fff;
+    }
+    .layui-layer-btn .layui-layer-btn0{
+        color: #40d7cd;
+        border-right: 0;
+    }
+    .layui-layer-btn {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        overflow: hidden;
+    }
+    .layui-layer-content{
+        border-radius: 5px;
+    }
+    .wrap-report{
+        background-color: #fff;
+        margin: 5px 10px;
+    }
+    .report-title {
+        color: #444;
+        font-size: 16px;
+        text-align: center;
+    }
+    .report-title::before,.report-title::after {
+        content: '';
+        display: inline-block;
+        width: 50px;
+        height: 1px;
+        background-color: #000;
+        margin-left: 10px;
+        margin-right: 10px;
+        position: relative;
+        top: -5px;
+    }
+    .more-img{
+        display: inline-block;
+        width: 15px;
+        height: 6px;
+        background: url('images/config_arrow_more.png') no-repeat;
+        background-size: cover;
+        position: relative;
+        top: -5px;
+    }
+    .wrap-report-info {
+        position: relative;
+        padding: 0 3%;
+        min-height: 78px;
+        padding-right: 118px;
+    }
+    .wrap-report-info .wrap-logo {
+        display: inline-block;
+        width: 78px;
+        height: 45px;
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        text-align: center;
+        overflow: hidden;
+    }
+    .wrap-info .wrap-logo img {
+        max-width: 100%;
+    }
+    .wrap-hos {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 118px;
+        height: 78px;
+        background-color: red;
+        background-size: cover;
+        background-position: center;
+    }
+    .hos-name {
+        color: #444;
+        font-size: 12px;
+        line-height: 24px;
+        padding: 0 10px;
+    }
+    .time {
+        text-align: right;
+        font-size: 12px;
+        color: #444;
+        padding: 0 10px;
+    }
 </style>
-<body ontouchstart style="padding: 10px;background-color:white">
+<body ontouchstart style="background-color:#f8f8f8;">
+<p class="title-tip">您可以到本院或其他正规医院做进一步口腔检查</p>
 
 <div class="filter" style="display: none">
     <div id='qrcode'
@@ -189,54 +312,68 @@
     </div>
 </div>
 
-<div id='title'>
-    <h4 style="font-size:20px;">口腔检查报告单</h4>
-</div>
-<div id="basic_info">
-    <p><span class="title_2">编号：</span>1002</p>
-    <p><span class="title_2">姓名：</span>小明</p>
-    <p><span class="title_2">性别：</span>
-        男  </p>
-    <p><span class="title_2">年龄：</span>15</p>
-</div>
+<div class="wrap-report">
+    <p class="report-title" style="padding-top: 15px;">基本信息</p>
 
-<div id="teeth_photos">
-    <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/204c68ad3af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
-    <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/report/1caaa9049bc69edd4a79b944dd385ef4.jpeg" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
-    <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/6062caa83af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
-    <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/234cb24c3af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
-    <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/23117bfd3af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
-    <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/229700d33af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
-    <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/225836aa3af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
-    <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/21dca3363af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
-    <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/2117ea763af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
-    <p style="margin-top:6px"><span style="color:gray;font-size: 12px;float: left">共9张</span>
-        <span id="more_photos">>>查看更多图片</span></p>
-</div>
-
-<div id="check_result">
-    <p class="title_2" style="font-size:14px;margin-bottom: 10px">检查结果:</p>
-    <p class="teethsymptom">
-        <span class="teethsymptom2">乳牙滞留</span>
-        <span class="teethsymptom2">深窝沟</span>
-        <span class="teethsymptom2">龋齿</span>
-    </p>
-    <div class="ask_btn">
-        <p class="title_2">点击咨询</p>
+    <div id="basic_info">
+        <p><span class="title_2">编号：</span>1002</p>
+        <p><span class="title_2">姓名：</span>小明</p>
+        <p><span class="title_2">性别：</span>
+            男  </p>
+        <p><span class="title_2">年龄：</span>15</p>
     </div>
-    <p style="margin-top: 13px;">您可到本院或其他正规医院做进一步口腔检查</p>
-    <div style="margin-top:20px;margin-bottom:40px;position: relative;">
-        <span style="font-size:12px">医生签名：</span>
-        <span id='seal' style=" background: url() no-repeat;background-size: 100%;"></span>
-        <p style="position: absolute;display: inline-block;font-size: 12px;right: 0;bottom:-14px;color: rgba(0, 0, 0, 0.79);">
+    <p class="report-title">口腔照片</p>
+
+    <div id="teeth_photos">
+        <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/204c68ad3af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
+        <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/report/1caaa9049bc69edd4a79b944dd385ef4.jpeg" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
+        <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/6062caa83af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
+        <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/234cb24c3af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
+        <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/23117bfd3af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
+        <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/229700d33af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
+        <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/225836aa3af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
+        <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/21dca3363af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
+        <img src="http://roopto.oss-cn-shanghai.aliyuncs.com/doctor/childimg/2117ea763af411e7af50a0d3c1faf43c.png" class="teeth_photo" data-preview-src="" data-preview-group="1"/>
+        <p style="margin-top:6px text-align:center;">
+            <span id="more_photos" style="font-size: 12px;">查看更多图片</span><br>
+            <i class="more-img"></i>
         </p>
-        <!-- <p style="position: absolute;display: inline-block;font-size: 12px;right: 0;bottom:-20px;color: rgba(0, 0, 0, 0.79);"></p>-->
+    </div>
+
+
+    <p class="report-title" >检查结果:</p>
+    <div id="check_result">
+        <p class="teethsymptom">
+        <!-- teethsymptom1,2,3不同程度的情况 -->
+            <span class="teethsymptom1">乳牙滞留</span>
+            <span class="">深窝沟</span>
+            <span class="">龋齿</span>
+        </p>
+    </div>
+
+    <div class="wrap-report-info">
+        <div class="wrap-logo">  
+            <img src="">
+        </div> 
+        <div class="wrap-logo">  
+            <img src="">
+        </div> 
+        <div class="wrap-logo">  
+            <img src="">
+        </div>       
+         <div class="wrap-hos" style="background-image: url('')"><!-- 医院盖章写在URL、里面 -->
+            <p class="hos-name" style="line-height: 17px;min-height: 30px;padding-top: 5px;">厦门某某医院</p>
+            <p class="hos-name">医生签名：老王</p>
+            <p class="time">2013.12.3</p>
+            <img src="">
+        </div>
+    </div>
+
+    <div class="ask_btn">
+        点击咨询
     </div>
 </div>
 
-<div id="footer">
-    <img src="https://app.roopto.com/static/weixin/img/logo3.png?1" class="logo_photo">
-</div>
 
 <script>
     var reportno = "1002";
@@ -250,52 +387,52 @@
     var qrcode = "";
     var tmpSrc;
     $(window).load(function () {
-        //弹窗
-        if (needName || needPhone) {
-            var content =
-                '<div style="width:auto;height: 50px;background-color: #EBF6FF;border-radius: 15px 15px 0px 0px"><b style="margin-left: 70px;font-size: 30px;"><font color="#51ADF7">建立您的健康档案</font></b></div>'
-                + '<div class="row" style="width: 100px; margin-top:30px;">'
-                + '<div class="col-sm-12" style="margin-left:15px">'
-                + '<div class="input-group">'
-                + '<input type="hidden" value="' + reportno + '" name="id">'
-                + '<input name="name" type="text"';
-            if (name)
-                content += 'value="' + name + '"';
-            else
-                content += 'placeholder="请输入姓名"';
-            content += '></div>'
-                + '</div>'
-                + '<div class="col-sm-12" style="margin-top: 18px;margin-left:15px">'
-                + '<div class="input-group">'
-                + '<input name="phone" type="text"';
-            if (phone)
-                content += 'value="' + phone + '"';
-            else
-                content += 'placeholder="请输入手机号码"';
-            content += '>'
-                + '</div>'
-                + '</div>'
-                + '</div>';
-            layer.open({
-                id: 1,
-                type: 1,
-                title: '',
-                closeBtn: 0,
-                area: ['250px', '275px'],
-                content: content,
-                btn: ['保存', '取消', '<span class="countTime">5</span>'],
-                btn1: function (index, layero) {
-                    postData();
-                },
-                btn2: function (index, layero) {
-                    layer.close(index);
-                    return false;
-                },
-                btn3: function () {
-                    return false;
-                }
-            });
-        }
+        // //弹窗
+        // if (needName || needPhone) {
+        //     var content =
+        //         '<div style="width:auto;height: 50px;background-color: #fff"><b style="margin-left: 70px;font-size: 30px;"><span color="#000;font-size16px;">建立您的健康档案</span></b></div>'
+        //         + '<div class="row" style="width: 100px; margin-top:30px;">'
+        //         + '<div class="col-sm-12" style="margin-left:15px">'
+        //         + '<div class="input-group">'
+        //         + '<input type="hidden" value="' + reportno + '" name="id">'
+        //         + '<input name="name" type="text"';
+        //     if (name)
+        //         content += 'value="' + name + '"';
+        //     else
+        //         content += 'placeholder="请输入姓名"';
+        //     content += '></div>'
+        //         + '</div>'
+        //         + '<div class="col-sm-12" style="margin-top: 18px;margin-left:15px">'
+        //         + '<div class="input-group">'
+        //         + '<input name="phone" type="text"';
+        //     if (phone)
+        //         content += 'value="' + phone + '"';
+        //     else
+        //         content += 'placeholder="请输入手机号码"';
+        //     content += '>'
+        //         + '</div>'
+        //         + '</div>'
+        //         + '</div>';
+        //     layer.open({
+        //         id: 1,
+        //         type: 1,
+        //         title: '',
+        //         closeBtn: 0,
+        //         area: ['250px', '275px'],
+        //         content: content,
+        //         btn: ['保存', '取消', '<span class="countTime">5</span>'],
+        //         btn1: function (index, layero) {
+        //             postData();
+        //         },
+        //         btn2: function (index, layero) {
+        //             layer.close(index);
+        //             return false;
+        //         },
+        //         btn3: function () {
+        //             return false;
+        //         }
+        //     });
+        // }
         $(".layui-layer-btn1").hide();
         var count = 4;
 

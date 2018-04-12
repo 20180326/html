@@ -7,52 +7,103 @@
     <title>牙侦探</title>
     <!-- 引入 WeUI -->
     <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css"/>
+    <style type="text/css">
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+        .clearfix{*+height:1%;} 
+        .fl {
+            float: left;
+        }
+        .fr {
+            float: right;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .title-tip {
+            line-height: 30px;
+            background-color: #fffbaa;
+            color: #444;
+            font-size: 12px;
+            text-align: center;
+        }
+        .wrap-active {
+            margin: 10px 15px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+        .wrap-active img {
+            display: block;
+            width: 100%;
+            min-height: 50px;
+            background-color: #f4f4f4;
+            border-top-right-radius: 8px;
+            border-top-left-radius: 8px;
+        }
+        .wrap-active-info {
+            padding: 15px;
+        }
+        .active-title {
+            font-size: 15px;
+            color: #444;
+        }
+        .title-info {
+            color: #9b9b9b;
+            font-size: 12px;
+            line-height: 30px;
+        }
+        .my-order {
+            color: #888;
+            font-size: 12px;
+            margin-left: 15px;
+        }
+        .wrap-order {
+            background-color: #fff;
+        }
+        .btn-add {
+            color: #fff;
+            font-size: 15px;
+            line-height: 50px;
+            height: 50px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #40d7cd;
+        }
+    </style>
 </head>
 <body ontouchstart style="background-color: #f8f8f8;">
-<!-- 使用 -->
-<div style="padding:10px 0 0;margin-bottom:-10px;width: 100%;text-align: center;">
-    <h1 style="font-size: 24px;">牙侦探</h1>
-</div>
-
-<div class="weui-cells__title">活动介绍</div>
-<div class="weui-cells">
-    <div class="weui-cell">
-        <div class="weui-cell__hd"><label class="weui-label">活动名</label></div>
-        <div class="weui-cell__bd">默认-5-厦门拜博口腔医院</div>
-    </div>
-    <div class="weui-cell">
-        <div class="weui-cell__hd"><label class="weui-label">地点</label></div>
-        <div class="weui-cell__bd">厦门市青少年宫</div>
-    </div>
-    <div class="weui-cell">
-        <div class="weui-cell__hd"><label class="weui-label">开始时间</label></div>
-        <div class="weui-cell__bd">2017-05-20 08:00:00</div>
-    </div>
-    <div class="weui-cell">
-        <div class="weui-cell__hd"><label class="weui-label">结束时间</label></div>
-        <div class="weui-cell__bd">2017-05-20 11:00:00</div>
-    </div>
-
-    <div class="weui-cell">
-        <div class="weui-cell__hd"><label class="weui-label">参加人数</label></div>
-        <div class="weui-cell__bd">
-
-            55
-
+<p class="title-tip">参加活动需要到现场接受医生检查</p>
+<div class="wrap-active">
+    <img src="">
+    <div class="wrap-active-info">
+        <p class="active-title">京东爱牙秀</p>
+        <div class="clearfix">
+            <span class="title-info fl">地址：北京市第十届发生</span>
+            <span class="title-info fr">预计参与人数：2130123</span>
         </div>
+        <p class="title-info">开始时间： 2103－02-12 21:22</p>
+        <p class="title-info">结束时间： 2133-21－12 11：21</p>
     </div>
-
+</div>
+<p class="my-order">我的检查单</p>
+<div class="wrap-order">
+    <div class="weui-panel__ft">
+        <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
+            <div class="weui-cell__bd">1032131&nbsp;&nbsp;&nbsp;姓名</div>
+            <span class="weui-cell__ft">查看更多</span>
+        </a>    
+  </div>
+  <div class="weui-panel__ft">
+        <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
+            <div class="weui-cell__bd">1032131&nbsp;&nbsp;&nbsp;姓名</div>
+            <span class="weui-cell__ft">查看更多</span>
+        </a>    
+  </div>
 </div>
 
-
-<div class="weui-cells__title" style="color:#000">友情提示：参加活动需要到现场接受医生检查</div>
-<div>
-    <a class="weui-btn weui-btn_plain-disabled" style="width: 50%">活动已经结束</a>
-</div>
-
-<div class="weui-footer" style="margin-top: 20px;">
-    <p class="weui-footer__text">Copyright © 2016-2018 罗雅光</p>
-</div>
+<p class="btn-add">新增取号</p>
 
 </body>
 </html>

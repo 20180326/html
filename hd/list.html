@@ -3,49 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <title>牙侦探</title>
+    <title>近期活动</title>
     <!-- 引入 WeUI -->
     <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css"/>
+    <style type="text/css">
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+        .clearfix{*+height:1%;} 
+        .fl {
+            float: left;
+        }
+        .fr {
+            float: right;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .title-tip {
+            line-height: 30px;
+            background-color: #fffbaa;
+            color: #444;
+            font-size: 12px;
+            text-align: center;
+        }
+        .wrap-list  {
+            box-sizing: border-box;
+        }
+        .wrap-list li {
+            width: 90%;
+            border-radius: 5px;
+            background-color: #fff;
+            margin: 18px auto 0;
+            list-style: none;
+
+        }
+        .wrap-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+            height: 122px;
+        }
+        .wrap-img img {
+            width: 100%;
+            max-height: 100%;
+        }
+        .wrap-contant {
+            width: 70%;
+            padding: 15px 10px;
+
+        }
+        .list-title {
+            font-size: 15px;
+            line-height: 20px;
+            height: 40px;
+            color: #444;
+        }
+        .list-time,.list-address {
+            font-size: 12px;
+            color: #9b9b9b;
+            padding-left: 20px;
+            padding-top: 1px;
+            line-height: 25px;
+            background: url('images/gocheck_time.png') no-repeat;
+            background-size: 12px;
+            background-position: left center;
+        }
+        .list-address {
+            background-image: url('images/gocheck_address.png');
+        }
+        .list-address .on {
+            color: #40d7cd;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;       
+            background-color: #fff; 
+        }
+        .wrap {
+            display: flex;
+        }
+        .footer .wrap div{
+            display: flex;
+            flex: 1;
+            padding-top: 30px;
+            font-size: 12px;
+            color: #a1a1a1;
+            text-align: center;
+            justify-content: center;
+            background: url('images/tab_home_nor.png') no-repeat;
+            background-size: 20px;
+            background-position: top 5px center;
+
+        }
+        .footer .wrap .checked {
+            background-image: url('images/tab_check_nor.png');
+        }
+        .footer .wrap .look {
+            background-image: url('images/tab_report_nor.png');
+        }
+        .footer .wrap .index.on{
+            background-image: url('images/tab_home_sel.png');
+            color: #40d7cd;
+        }
+        .footer .wrap .checked.on{
+            background-image: url('images/tab_check_sel.png');
+            color: #40d7cd;
+        }
+
+        .footer .wrap .look.on{
+            background-image: url('images/tab_report_sel.png');
+            color: #40d7cd;
+        }
+
+
+    </style>
+
 </head>
 <body ontouchstart style="background-color: #f8f8f8;">
-<!-- 使用 -->
-<div style="padding:10px 0 0;margin-bottom:-10px;width: 100%;text-align: center;">
-    <h1 style="font-size: 24px;">牙侦探</h1>
-</div>
-<div class="weui-cells__title">近期活动</div>
-<div class="weui-cells">
-    <a class="weui-cell weui-cell_access" href="./hd-info-id-214">
-        <div class="weui-cell__bd"><p>莆田市 兴安明城阳光幼儿园</p></div>
-        <div class="weui-cell__ft">正在进行</div>
-    </a>
-    <a class="weui-cell weui-cell_access" href="./hd-info-id-201">
-        <div class="weui-cell__bd"><p>厦门市 思明区兴业银行思明支行</p></div>
-        <div class="weui-cell__ft">已经结束</div>
-    </a>
-    <a class="weui-cell weui-cell_access" href="./hd-info-id-194">
-        <div class="weui-cell__bd"><p>厦门市 拜博口腔兴业银行莲花支行讲座会诊</p></div>
-        <div class="weui-cell__ft">10-11开始</div>
-    </a>
-    <a class="weui-cell weui-cell_access" href="./hd-info-id-192">
-        <div class="weui-cell__bd"><p>厦门市 洛客设计师节</p></div>
-        <div class="weui-cell__ft">已经结束</div>
-    </a>
-    <a class="weui-cell weui-cell_access" href="./hd-info-id-178">
-        <div class="weui-cell__bd"><p>苏州市 潮妈圈年会活动</p></div>
-        <div class="weui-cell__ft">已经结束</div>
-    </a>
-    <a class="weui-cell weui-cell_access" href="./hd-info-id-176">
-        <div class="weui-cell__bd"><p>泉州市 西亭社区活动</p></div>
-        <div class="weui-cell__ft">已经结束</div>
-    </a>
-    <a class="weui-cell weui-cell_access" href="./hd-info-id-2">
-        <div class="weui-cell__bd"><p>厦门市 厦门 拜博 青少年宫口腔义诊</p></div>
-        <div class="weui-cell__ft">已经结束</div>
-    </a>
-</div>
+ <p class="title-tip">牙侦探开展的牙齿检查活动均为免费活动</p>
+<ul class="wrap-list">
+    <li class="clearfix">
+        <div class="wrap-img fl">
+            <img src="">
+        </div>
+        <div class="fl wrap-contant">
+            <h4 class="list-title">京东爱牙季</h4>
+            <p class="list-time">03/6-04/13</p>
+            <!-- 正在进行中加class＝on -->
+            <p class="list-address">福建厦门 <span class="fr on">正在进行中</span> </p>
+        </div>
+    </li>
+    <li class="clearfix">
+        <div class="wrap-img fl">
+            <img src="">
+        </div>
+        <div class="fl wrap-contant">
+            <h4 class="list-title">京东爱牙季</h4>
+            <p class="list-time">03/6-04/13</p>
+            <!-- 正在进行中加class＝on -->
+            <p class="list-address">福建厦门 <span class="fr">正在进行中</span> </p>
+        </div>
+    </li>
+</ul>
 
 <div class="weui-footer" style="margin-top: 20px;">
     <p class="weui-footer__text">Copyright © 2016-2018 罗雅光</p>
+</div>
+
+<div class="footer clearfix">
+    <div class="wrap">
+    <!-- class= on为当前状态 -->
+        <div class="index">首页</div>
+        <div class="checked">检查报告</div>
+        <div class="look on">查看报告</div>
+    </div>
+    
 </div>
 
 </body>

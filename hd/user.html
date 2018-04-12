@@ -7,32 +7,61 @@
     <!-- 引入 WeUI -->
     <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css"/>
     <script type="text/javascript" src="https://app.roopto.com/static/weixin/qr.min.js?1" ></script>
-    <script type="text/javascript" src="https://app.roopto.com/static/weixin/jquery-1.10.1.min.js?1" ></script></head>
+    <script type="text/javascript" src="https://app.roopto.com/static/weixin/jquery-1.10.1.min.js?1" ></script>
+    <style type="text/css">
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+        .clearfix{*+height:1%;} 
+        .fl {
+            float: left;
+        }
+        .fr {
+            float: right;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .title-tip {
+            line-height: 30px;
+            background-color: #fffbaa;
+            color: #444;
+            font-size: 12px;
+            text-align: center;
+        }
+        .check-num {
+            text-align: center;
+            font-size: 18px;
+            color: #444;
+            line-height: 40px;
+        }
+        #qrcode {
+            width: 80%;
+            padding: 30px 0;
+            margin: 0 auto;
+        }
+        #qrcode img {
+            max-width: 100%;
+        }
+        .save {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 20;
+        }
+        .save a{
+            display: block;
+            border-radius: 0;
+            background-color: #40d7cd;
+            color: #fff;
+            font-size: 15px;
+            line-height: 50px;
+        }
+    </style>
+</head>
 <body ontouchstart style="background-color: #f8f8f8;">
-<!-- 使用 -->
-<div style="padding:10px 0 0;margin-bottom:-10px;width: 100%;text-align: center;">
-    <h1 style="font-size: 24px;">牙侦探</h1>
-</div>
-
-
-
-<div class="weui-cells">
-    <div class="weui-cell">
-        <div class="weui-cell__hd"><label class="weui-label">编码</label></div>
-        <div class="weui-cell__bd">1001756</div>
-    </div>
-    <div class="weui-cell">
-        <div class="weui-cell__hd"><label class="weui-label">二维码</label></div>
-        <div class="weui-cell__ft" style="float: right">给医生扫描，开始检查</div>
-    </div>
-    <div class="weui-cell">
-        <div style="text-align: center;width: 80%;margin: auto;">
-            <div id="qrcode" style=""></div>
-        </div>
-    </div>
-</div>
-<div class="weui-cells__title" style="color:red">请尽快补充资料，以便建立您的专属报告</div>
-<div class="weui-cells">
+<p class="title-tip">向医生出示二维码，开始检查</p>
+<p class="check-num">编码1001756</p>
+<div class="weui-cells" style="margin-top: 0;">
     <form id="j-form">
         <input type="hidden" name="id" value="1001756">
         <input type="hidden" name="open_id" value="oNbqWs37MrwOEsLNnmkqa5c9vF0g">
@@ -59,19 +88,22 @@
         </div>
     </form>
 </div>
-<div style="width: 100%;text-align: center;margin:20px 0;">
-    <a href="javascript:;" class="weui-btn weui-btn_primary j-save" style="width: 50%">保存</a>
+
+<div class="weui-cells" style="margin-top: 0;padding-bottom: 20px;">    
+    <div class="weui-cell">
+        <div style="text-align: center;width: 80%;margin: auto;">
+            <div id="qrcode" style=""></div>
+        </div>
+    </div>
+    <div style="width: 100%;text-align: center;" class="save">
+        <a href="javascript:;"  style="width: 100%" class="j-save">保存</a>
+    </div>
+
+    <div class="weui-footer" style="margin-top: 20px;">
+        <p class="weui-footer__text">Copyright © 2016-2018 罗雅光</p>
+    </div>
 </div>
 
-<div class="weui-cells">
-    <a class="weui-cell weui-cell_access" href="./detail.html">
-        <div class="weui-cell__bd">
-            <p>查看其它检查单</p>
-        </div>
-        <div class="weui-cell__ft">
-        </div>
-    </a>
-</div>
 
 <div id="toast" style="display: none;">
     <div class="weui-mask_transparent"></div>
@@ -79,9 +111,6 @@
         <i class="weui-icon-success-no-circle weui-icon_toast"></i>
         <p class="weui-toast__content">保存成功</p>
     </div>
-</div>
-<div class="weui-footer" style="margin-top: 20px;">
-    <p class="weui-footer__text">Copyright © 2016-2018 罗雅光</p>
 </div>
 
 </body>
