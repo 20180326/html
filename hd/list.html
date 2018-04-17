@@ -29,26 +29,36 @@
             box-sizing: border-box;
         }
         .wrap-list li {
-            width: 90%;
+        	position: relative;
+            width: 92%;
+            padding: 15% 0;
+            background-color: red;
             border-radius: 5px;
             background-color: #fff;
             margin: 18px auto 0;
             list-style: none;
 
         }
+        .wrap-list .wrap-calc{
+        	position: absolute;
+        	left: 0;
+        	right: 0;
+        	top: 0;
+        	bottom: 0;
+        }
         .wrap-img {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 30%;
-            height: 122px;
+            width: 47%;
+            height: 100%;
         }
         .wrap-img img {
             width: 100%;
-            max-height: 100%;
+            height: 100%;
         }
         .wrap-contant {
-            width: 70%;
+            width: 53%;
             padding: 15px 10px;
 
         }
@@ -118,7 +128,14 @@
             color: #40d7cd;
         }
 
-
+        @media screen  and (max-width: 320px) {
+        	.list-time, .list-address{
+        		line-height: 18px;
+        	}
+        	.wrap-contant{
+        		padding: 10px;
+        	}
+        }
     </style>
 
 </head>
@@ -126,26 +143,30 @@
  <p class="title-tip">牙侦探开展的牙齿检查活动均为免费活动</p>
 <ul class="wrap-list">
     <li class="clearfix">
-        <div class="wrap-img fl">
-            <img src="">
-        </div>
-        <div class="fl wrap-contant">
-            <h4 class="list-title">京东爱牙季</h4>
-            <p class="list-time">03/6-04/13</p>
-            <!-- 正在进行中加class＝on -->
-            <p class="list-address">福建厦门 <span class="fr on">正在进行中</span> </p>
-        </div>
+    	<div class="wrap-calc clearfix">
+	        <div class="wrap-img fl">
+	            <img src="">
+	        </div>
+	        <div class="fl wrap-contant">
+	            <h4 class="list-title">京东爱牙季</h4>
+	            <p class="list-time">03/6-04/13</p>
+	            <!-- 正在进行中加class＝on -->
+	            <p class="list-address">福建厦门 <span class="fr on">正在进行中</span> </p>
+	        </div>
+	    </div>
     </li>
     <li class="clearfix">
-        <div class="wrap-img fl">
-            <img src="">
-        </div>
-        <div class="fl wrap-contant">
-            <h4 class="list-title">京东爱牙季</h4>
-            <p class="list-time">03/6-04/13</p>
-            <!-- 正在进行中加class＝on -->
-            <p class="list-address">福建厦门 <span class="fr">正在进行中</span> </p>
-        </div>
+    	<div class="wrap-calc clearfix">
+	        <div class="wrap-img fl">
+	            <img src="">
+	        </div>
+	        <div class="fl wrap-contant">
+	            <h4 class="list-title">京东爱牙季</h4>
+	            <p class="list-time">03/6-04/13</p>
+	            <!-- 正在进行中加class＝on -->
+	            <p class="list-address">福建厦门 <span class="fr">正在进行中</span> </p>
+	        </div>
+	    </div>
     </li>
 </ul>
 

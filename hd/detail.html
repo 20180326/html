@@ -27,14 +27,24 @@
             text-align: center;
         }
         .wrap-active {
-            margin: 10px 15px;
+            position: relative;
+            width: 90%;
+            margin: 10px auto;
             background-color: #fff;
             border-radius: 8px;
+            padding-top: 40%;
+        }
+        .active-img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 22% 0;
         }
         .wrap-active img {
             display: block;
             width: 100%;
-            min-height: 50px;
+            max-height: 100%;
             background-color: #f4f4f4;
             border-top-right-radius: 8px;
             border-top-left-radius: 8px;
@@ -76,12 +86,14 @@
 <body ontouchstart style="background-color: #f8f8f8;">
 <p class="title-tip">参加活动需要到现场接受医生检查</p>
 <div class="wrap-active">
-    <img src="">
+    <div class="active-img">
+        <img src="">
+    </div>
     <div class="wrap-active-info">
         <p class="active-title">京东爱牙秀</p>
-        <div class="clearfix">
-            <span class="title-info fl">地址：北京市第十届发生</span>
-            <span class="title-info fr">预计参与人数：2130123</span>
+        <div class="clearfix" style="padding: 5px 0;">
+            <span class="title-info fl" style="max-width: 60%;line-height: 1.2;">地址：北京市第十届发生</span>
+            <span class="title-info fr" style="max-width: 40%;text-align: right;line-height: 1.2;">预计参与人数：2130</span>
         </div>
         <p class="title-info">开始时间： 2103－02-12 21:22</p>
         <p class="title-info">结束时间： 2133-21－12 11：21</p>
