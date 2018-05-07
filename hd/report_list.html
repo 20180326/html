@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>牙侦探</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css"/>
+</head>
+<body ontouchstart style="background-color: #f8f8f8;">
+<!-- 使用 -->
+<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<div style="margin-top: 20px">
+    <a id="scan" class="weui-btn" style="width: 94%;background: #118ee9;color:white">扫码查看报告单</a>
+    <a href="./report-add" class="weui-btn weui-btn_plain-default" style="width: 94%;margin-top: 5px">输入报告单号查看报告单</a>
+</div>
+<div class="weui-cells__title">报告单列表</div>
+<div class="weui-cells">
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-402836-actno--key-e16d180be">
+        <div class="weui-cell__bd"><p>402836 1</p> </div>
+        <div class="weui-cell__ft"><span style="color:red">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-402835-actno--key-b3ccb92c0">
+        <div class="weui-cell__bd"><p>402835 </p> </div>
+        <div class="weui-cell__ft"><span style="color:red">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-402834-actno-hd04-key-c0fdc7c91">
+        <div class="weui-cell__bd"><p>402834 </p> </div>
+        <div class="weui-cell__ft"><span style="color:red">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-402795-actno--key-21d6b7fdb">
+        <div class="weui-cell__bd"><p>402795 </p> </div>
+        <div class="weui-cell__ft"><span style="color:red">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-402794-actno--key-fa87fda23">
+        <div class="weui-cell__bd"><p>402794 </p> </div>
+        <div class="weui-cell__ft"><span style="color:red">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-402284-actno-hd06-key-1229ad8c3">
+        <div class="weui-cell__bd"><p>402284 长得帅</p> </div>
+        <div class="weui-cell__ft"><span style="color:red">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-401149-actno-hd06-key-5fa38b687">
+        <div class="weui-cell__bd"><p>401149 </p> </div>
+        <div class="weui-cell__ft"><span style="color:red">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-401148-actno-hd06-key-211435528">
+        <div class="weui-cell__bd"><p>401148 </p> </div>
+        <div class="weui-cell__ft"><span style="color:red">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-401147-actno-hd06-key-362cf44a4">
+        <div class="weui-cell__bd"><p>401147 </p> </div>
+        <div class="weui-cell__ft"><span style="color:red">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-401146-actno-hd06-key-e1cb4658b">
+        <div class="weui-cell__bd"><p>401146 </p> </div>
+        <div class="weui-cell__ft"><span style="color:red">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-401145-actno-hd06-key-d85774b8d">
+        <div class="weui-cell__bd"><p>401145 </p> </div>
+        <div class="weui-cell__ft"><span style="color:red">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-401144-actno-hd05-key-d4ccbe04b">
+        <div class="weui-cell__bd"><p>401144 成龙</p> </div>
+        <div class="weui-cell__ft"><span style="color:red">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-400874-actno-hd06-key-abada4b13">
+        <div class="weui-cell__bd"><p>400874 纪晨钰</p> </div>
+        <div class="weui-cell__ft">点击查看</div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-400207-actno-hd03-key-843523a3b">
+        <div class="weui-cell__bd"><p>400207 吴超前</p> </div>
+        <div class="weui-cell__ft">点击查看</div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-400205-actno-hd05-key-9db695493">
+        <div class="weui-cell__bd"><p>400205 </p> </div>
+        <div class="weui-cell__ft"><span style="color:red">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-1002-actno-default-key-23c513180">
+        <div class="weui-cell__bd"><p>1002 </p> </div>
+        <div class="weui-cell__ft">点击查看</div>
+    </a>
+
+</div>
+<script>
+    var signPackage ={"jsapi_ticket":false,"noncestr":"dvrsaefdsfvrg","timestamp":1525696427,"url":"http:\/\/app2.roopto.com\/weixin\/report-list","signature":"06dcbc7f7b75867bb1fd30aa057ef9202a10549d","appId":"wx92ecc3b18520ffce"};
+    console.log(signPackage);
+    //微信配置
+    wx.config({
+        debug: false,
+        appId:signPackage.appId,
+        timestamp:signPackage.timestamp,
+        nonceStr:signPackage.noncestr,
+        signature:signPackage.signature ,
+        jsApiList: [
+            // 所有要调用的 API 都要加到这个列表中
+            'checkJsApi',
+            'scanQRCode'
+        ]
+    });
+
+    wx.ready(function () {
+        wx.checkJsApi({
+            jsApiList: [
+                'scanQRCode'
+            ],
+            success: function (res) {
+                if (res.checkResult.getLocation == false) {
+                    alert('你的微信版本太低，不支持微信JS接口，请升级到最新的微信版本！');
+                    return
+                }
+            }
+        });
+        $('#scan').click(function(){
+            wx.scanQRCode({
+                needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+                scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+                success: function (res) {
+                    console.log(res);
+                }
+            });
+        })
+    })
+
+</script>
+<div class="weui-footer" style="margin-top: 20px;">
+    <!-- <p class="weui-footer__text">Copyright © 2016-2018 罗雅光</p>-->
+</div>
+
+</body>
+</html>
