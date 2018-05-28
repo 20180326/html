@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">
+    <title>主页</title>
+    <link rel="stylesheet" href="css/lib/weui.min.css">
+    <link rel="stylesheet" href="css/lib/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jquery-weui.min.js"></script>
+    <script src="js/lib/city-picker.min.js"></script>
+</head>
+<body class="info">
+    <div class="hot-ball-icon"></div>
+    <div class="wrap-info">
+        <div class="info-item  flex flex-j-s flex-a-c">
+            <span>姓名（必填）</span>
+            <input type="text" placeholder="输入您的名字" class="info-name">
+        </div>
+        <div class="info-item info-item-choose  flex flex-j-s flex-a-c">
+            <span>性别（必填）</span>
+            <input type="text" id='sex' placeholder="请选择"/>
+        </div>
+        <div class="info-item info-item-choose  flex flex-j-s flex-a-c">
+            <span>年龄（必填）</span>
+            <input type="text" id='age' placeholder="请选择"/>
+        </div>
+        <div class="info-item info-item-choose  flex flex-j-s flex-a-c">
+            <span>地区（必填）</span>
+            <input type="text" id='city-picker' placeholder="请选择"/>
+        </div>
+        <!--无法修改的状态加class＝info-item-disable-->
+        <div class="info-item info-item-choose   flex flex-j-s flex-a-c">
+            <span>学校（非必填）</span>
+            <!--无法修改的状态加 disabled='disabled'-->
+            <input type="text" id='school' placeholder="请选择"/>
+        </div>
+        <p class="text-center" style="color: #F15B5B;font-size: 12px;margin-top: 10px"><i class="info-zhuyi"></i>若参加学校活动，需选择学校</p>
+    </div>
+    <!--有学校时class是margin-15没有的是margin-30-->
+    <div class="text-center margin-15">
+        <span class="info-start-game">开始游戏</span>
+    </div>
+    <p class="text-center info-valitade-tip" ><i class="info-zhuyi"></i><span style="color: #F15B5B;" class="info-err">'性别'</span>为必填项</p>
+    <div class="game-footer-icon"></div>
+
+
+    <!--选择校区后弹窗-->
+    <div class="wrap-choose-school flex flex-a-c flex-j-c ">
+        <div class="choose-school-content">
+            <span class="school-warn"></span>
+            <p class="text-center font-13 margin-15">选择学校后，活动期间内无法再次修改</p>
+            <div class="wrap-school-btn">
+                <span>修改信息</span>
+                <span>确认开始</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        var wHeight = $(window).height();
+        $('body').css({height: wHeight + 'px'});
+        //验证
+        function startGame() {
+          var info = {
+              name: $('.info-name').val(),
+              sex: $('#sex').val(),
+              age: $('#age').val(),
+              address: $('#city-picker').val()
+          };
+
+
+          if(info.name == '') {
+              $('.info-valitade-tip').show();
+              $('.info-err').text("'"+ "姓名"+"'");
+              return;
+          }else if(info.sex == ''){
+              $('.info-valitade-tip').show();
+              $('.info-err').text("'"+ "性别"+"'");
+              return;
+          }else if(info.age == ''){
+              $('.info-valitade-tip').show();
+              $('.info-err').text("'"+ "年龄"+"'");
+              return;
+          }else if(info.address == ''){
+              $('.info-valitade-tip').show();
+              $('.info-err').text("'"+ "地区"+"'");
+              return;
+          }
+
+        };
+        $('.info-start-game').on('click', startGame);
+        $("#city-picker").cityPicker({
+            title: "请选择地址",
+            showDistrict: false
+        });
+        $("#sex").picker({
+            title: "请选择性别",
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: [ '女', '男']
+                }
+            ]
+        });
+        $("#age").picker({
+            title: "请选择性别",
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: [ '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60']
+                }
+            ]
+        });
+        $("#school").picker({
+            title: "请选择学校",
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: ['阳光小学', '阳光小学', '阳光小学']
+                }
+            ]
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">
+    <title>主页</title>
+    <link rel="stylesheet" href="css/lib/weui.min.css">
+    <link rel="stylesheet" href="css/lib/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jquery-weui.min.js"></script>
+</head>
+<body class="test">
+    <a href="javascript:history.go(-1)"  class="btn-back-icon"></a>
+    <div class="text-center"><div class="test-tip"></div></div>
+    <p class="text-center margin-15">完成21天，更有丰富大礼等你领取</p>
+    <p class="text-center">需在活动结束前完成，剩余：26天22小时19分</p>
+    <div class="wrap-award-tip text-center">
+        <i></i>
+        <span>完成任务获得的奖励，可在【首页-背包】中查看</span>
+    </div>
+
+    <div class="wrap-test-list">
+        <!--可点击绿色按钮加class ＝ on-->
+        <div class="test-list">
+            <p class="test-list-title">参与问卷调查</p>
+            <div class="test-list-content1 flex flex-j-s flex-a-c">
+                <span style="font-size: 16px;">任务：问卷</span>
+                <span class="btn-test-done">已完成</span>
+            </div>
+            <div class="test-wrap-center text-center">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="test-list-content2 flex flex-j-s flex-a-c">
+                <span style="font-size: 16px;" class="flex-a-c flex">奖励：
+                    <span class="test-award-quan">1</span>
+                    <span class="test-award-jifen">100</span>
+                </span>
+                <span class="btn-test-done on">领取</span>
+            </div>
+        </div>
+
+        <!--可点击绿色按钮加class ＝ on-->
+        <div class="test-list">
+            <p class="test-list-title">参与问卷调查</p>
+            <div class="test-list-content1 flex flex-j-s flex-a-c">
+                <span style="font-size: 16px;">任务：问卷</span>
+                <span class="btn-test-done">已完成</span>
+            </div>
+            <div class="test-wrap-center text-center">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="test-list-content2 flex flex-j-s flex-a-c">
+                <span style="font-size: 16px;" class="flex-a-c flex">奖励：
+                    <span class="test-award-quan">1</span>
+                    <span class="test-award-jifen">100</span>
+                </span>
+                <span class="btn-test-done ">已领取</span>
+            </div>
+        </div>
+
+        <!--可点击绿色按钮加class ＝ on-->
+        <div class="test-list">
+            <p class="test-list-title">参与问卷调查</p>
+            <div class="test-list-content1 flex flex-j-s flex-a-c">
+                <span style="font-size: 16px;">任务：问卷</span>
+                <span class="btn-test-done">去完成</span>
+            </div>
+            <div class="test-wrap-center text-center">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="test-list-content2 flex flex-j-s flex-a-c">
+                <span style="font-size: 16px;" class="flex-a-c flex">奖励：
+                    <span class="test-award-quan">1</span>
+                    <span class="test-award-jifen">100</span>
+                </span>
+                <span class="font-12">任务未完成</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="wrap-test-yindao1">
+        <div class="wrap-shou text-center">
+            <span>点击[领取]</span>
+            <i class="icon-shou"></i>
+        </div>
+    </div>
+    <div class="wrap-test-yindao2">
+        <p class="text-center" style="margin-top: 60%;">完成签到任务，解锁更多任务，领取更多奖励</p>
+        <i class="text-yindao2-icon"></i>
+    </div>
+
+</body>
+<script>
+    $(function(){
+        var wHeight = $(window).height();
+        $('body').css({minHeight: wHeight + 'px'});
+        var yindaoL = $('.test-list').eq(0).find('.test-list-content2 .btn-test-done').offset().left;
+        var yindaoT = $('.test-list').eq(0).find('.test-list-content2 .btn-test-done').offset().top;
+        $('.wrap-shou').css({'top': yindaoT - 100 + 'px','left': yindaoL - 15 + 'px'});
+        var yindaoL1 = $('.test-list').eq(1).find('.test-list-title').offset().left;
+        var yindaoT1 = $('.test-list').eq(1).find('.test-list-title').offset().top;
+        $('.text-yindao2-icon').css({'top': yindaoT1 + 12 + 'px','left': yindaoL1 + 110 + 'px'});
+    });
+</script>
+</html>

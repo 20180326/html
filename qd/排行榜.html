@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">
+    <title>主页</title>
+    <link rel="stylesheet" href="css/lib/weui.min.css">
+    <link rel="stylesheet" href="css/lib/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jquery-weui.min.js"></script>
+</head>
+<body class="rank">
+    <a href="javascript:history.go(-1)"  class="btn-back-icon"></a>
+    <div class="jifen-tip"></div>
+    <p class="text-center" style="font-size: 15px;margin-top: 23px;">积分前200名用户可以获得额外奖励</p>
+    <p class="text-center" style="font-size: 15px;">积分相同时，按时间先后排序</p>
+
+    <div class="wrap-rank-list">
+        <div class="rank-list flex flex-j-s flex-a-c">
+            <span class="rank-num1">1</span>
+            <span class="wrap-user-name">
+                <img src="" alt="">
+                <em>用户名称</em>
+            </span>
+            <span class="rank-fenshu">10000分</span>
+        </div>
+
+        <div class="rank-list flex flex-j-s flex-a-c">
+            <span class="rank-num2">2</span>
+            <span class="wrap-user-name">
+                <img src="" alt="">
+                <em>用户名称</em>
+            </span>
+            <span class="rank-fenshu">10000分</span>
+        </div>
+
+        <div class="rank-list flex flex-j-s flex-a-c">
+            <span class="rank-num3">3</span>
+            <span class="wrap-user-name">
+                <img src="" alt="">
+                <em>用户名称</em>
+            </span>
+            <span class="rank-fenshu">10000分</span>
+        </div>
+
+        <!--自己的排名加class＝on-->
+        <div class="rank-list on flex flex-j-s flex-a-c">
+            <span class="rank-num">4</span>
+            <span class="wrap-user-name">
+                <img src="" alt="">
+                <em>用户名称</em>
+            </span>
+            <span class="rank-fenshu">10000分</span>
+        </div>
+
+        <div class="flex flex-j-s flex-a-c">
+            <span class=></span>
+            <span style="font-size: 18px;">...</span>
+            <span></span>
+        </div>
+
+
+    </div>
+
+</body>
+<script>
+    $(function(){
+        var wHeight = $(window).height();
+        $('body').css({minHeight: wHeight + 'px'});
+    });
+</script>
+</html>

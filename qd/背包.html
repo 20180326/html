@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">
+    <title>主页</title>
+    <link rel="stylesheet" href="css/lib/weui.min.css">
+    <link rel="stylesheet" href="css/lib/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jquery-weui.min.js"></script>
+    <script src="js/lib/clipboard.min.js"></script>
+</head>
+<body class="game-rules">
+    <div class="hot-ball-icon"></div>
+    <span class="btn-back-icon"></span>
+    <div class="game-rules-bg" style="padding: 0 10px;width: 300px;">
+        <div class="text-center wrap-game-rules-title" >
+            <span class="game-rules-title"><i class="beibao-text"></i></span>
+        </div>
+        <p class="font-12 text-center">兑换码使用方式：支付时填写优惠码即可享受优惠</p>
+        <div class="wrap-renwu-list">
+            <!--滚动条-->
+            <!--<div class="index-wrap-progress" style="top: 15px;right: -2px;">-->
+                <!--<span class="index-progress"></span>-->
+            <!--</div>-->
+            <div class="beibao-wrap-list clearfix flex flex-a-c">
+                <span class="fl beibao-reduce"></span>
+                <div class="flex flex-c" style="width: 152px;">
+                    <span class="font-13">拜博口腔检查优惠卷</span>
+                    <p class="font-12" style="color:rgba(58,35,10,1);">兑换码：7121dasas <span class="beibao-copy" data-clipboard-text='7121dasas1'  style="color:rgba(58,35,10,1);">复制</span></p>
+                </div>
+                <span class="beibao-btn-reduce">已使用</span>
+            </div>
+            <div class="beibao-wrap-list clearfix flex flex-a-c">
+                <span class="fl beibao-reduce"></span>
+                <div class="flex flex-c" style="width: 152px;">
+                    <span class="font-13">拜博口腔检查优惠卷</span>
+                    <p class="font-12" style="color:rgba(58,35,10,1);">兑换码：7121dasas <span  class="beibao-copy" data-clipboard-text='7121dasas2'  style="color:rgba(58,35,10,1);">复制</span></p>
+                </div>
+                <span class="beibao-btn-reduce on">前往兑换</span>
+            </div>
+            <div class="beibao-wrap-list clearfix flex flex-a-c">
+                <span class="fl beibao-reduce"></span>
+                <div class="flex flex-c" style="width: 152px;">
+                    <span class="font-13">拜博口腔检查优惠卷</span>
+                    <p class="font-12" style="color:rgba(58,35,10,1);">兑换码：7121dasas <span  style="color:rgba(58,35,10,1);">复制</span></p>
+                </div>
+                <span class="beibao-btn-reduce on">前往兑换</span>
+            </div>
+            <div class="beibao-wrap-list clearfix flex flex-a-c">
+                <span class="fl beibao-reduce"></span>
+                <div class="flex flex-c" style="width: 152px;">
+                    <span class="font-13">拜博口腔检查优惠卷</span>
+                    <p class="font-12" style="color:rgba(58,35,10,1);">兑换码：7121dasas <span  style="color:rgba(58,35,10,1);">复制</span></p>
+                </div>
+                <span class="beibao-btn-reduce on">前往兑换</span>
+            </div>
+        </div>
+    </div>
+    <div class="game-footer-icon"></div>
+</body>
+<script>
+    $(function () {
+        var wHeight = $(window).height();
+        $('body').css({height: wHeight + 'px'});
+        //复制功能
+        var clipboard = new ClipboardJS('.beibao-copy');
+            clipboard.on('success', function (e) {
+                $.toast('复制成功', 'success');
+            });
+            clipboard.on('error', function (e) {
+                $.toast('复制失败', 'forbidden');
+            });
+
+    });
+</script>
+</html>
