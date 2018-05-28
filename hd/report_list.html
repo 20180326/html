@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>牙侦探</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
+    <style type="text/css">
+    	.scan,.scan1 {
+    		display: inline-block;
+    		padding-top: 60px;
+    		text-align: center;
+    		background: url('images/checkreport_scan.png') no-repeat;
+    		background-size: 55px;
+    		background-position: top center;
+    		font-size: 14px;
+    		color: #444;
+    	}
+    	.scan1 {
+    		background-image: url('images/checkreport_orderno.png');
+    		border-left: 1px solid #d5d5d5;
+    		box-sizing: border-box;
+    	}
+    	.weui-cell_access .weui-cell__ft:after{
+    		margin-top: -2px;
+    	}
+    </style>
+</head>
+<body ontouchstart style="background-color: #f8f8f8;">
+<!-- 使用 -->
+<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<div style="padding: 23px 0; background-color: #fff;font-size: 0;">
+    <a id="scan" class="scan" style="width: 50%;">扫码查看</a>
+    <a href="./report-add" class="scan1" style="width: 50%;">单号查询</a>
+</div>
+<div class="weui-cells__title" style="font-size: 14px;">报告单列表</div>
+<div class="weui-cells">
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-402836-actno--key-e16d180be">
+        <div class="weui-cell__bd" style="font-size: 14px;"><p>402836 1</p> </div>
+        <div class="weui-cell__ft"><span style="color:red;font-size: 12px;">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-402836-actno--key-e16d180be">
+        <div class="weui-cell__bd" style="font-size: 14px;"><p>402836 1</p> </div>
+        <div class="weui-cell__ft"><span style="color:red;font-size: 12px;">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-402836-actno--key-e16d180be">
+        <div class="weui-cell__bd" style="font-size: 14px;"><p>402836 1</p> </div>
+        <div class="weui-cell__ft"><span style="color:red;font-size: 12px;">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-402836-actno--key-e16d180be">
+        <div class="weui-cell__bd" style="font-size: 14px;"><p>402836 1</p> </div>
+        <div class="weui-cell__ft"><span style="color:red;font-size: 12px;">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-402836-actno--key-e16d180be">
+        <div class="weui-cell__bd" style="font-size: 14px;"><p>402836 1</p> </div>
+        <div class="weui-cell__ft"><span style="color:red;font-size: 12px;">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-402836-actno--key-e16d180be">
+        <div class="weui-cell__bd" style="font-size: 14px;"><p>402836 1</p> </div>
+        <div class="weui-cell__ft"><span style="color:red;font-size: 12px;">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-402836-actno--key-e16d180be">
+        <div class="weui-cell__bd" style="font-size: 14px;"><p>402836 1</p> </div>
+        <div class="weui-cell__ft"><span style="color:red;font-size: 12px;">报告上传中</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-400874-actno-hd06-key-abada4b13">
+        <div class="weui-cell__bd" style="font-size: 14px;"><p>400874 纪晨钰</p> </div>
+        <div class="weui-cell__ft"><span style="font-size: 12px;">点击查看</span></div>
+    </a>
+
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-400874-actno-hd06-key-abada4b13">
+        <div class="weui-cell__bd" style="font-size: 14px;"><p>400874 纪晨钰</p> </div>
+        <div class="weui-cell__ft"><span style="font-size: 12px;">点击查看</span></div>
+    </a>
+    <a class="weui-cell weui-cell_access" href="report-info-reportno-400874-actno-hd06-key-abada4b13">
+        <div class="weui-cell__bd" style="font-size: 14px;"><p>400874 纪晨钰</p> </div>
+        <div class="weui-cell__ft"><span style="font-size: 12px;">点击查看</span></div>
+    </a>
+    
+
+</div>
+<script>
+    var signPackage ={"jsapi_ticket":false,"noncestr":"dvrsaefdsfvrg","timestamp":1525696427,"url":"http:\/\/app2.roopto.com\/weixin\/report-list","signature":"06dcbc7f7b75867bb1fd30aa057ef9202a10549d","appId":"wx92ecc3b18520ffce"};
+    console.log(signPackage);
+    //微信配置
+    wx.config({
+        debug: false,
+        appId:signPackage.appId,
+        timestamp:signPackage.timestamp,
+        nonceStr:signPackage.noncestr,
+        signature:signPackage.signature ,
+        jsApiList: [
+            // 所有要调用的 API 都要加到这个列表中
+            'checkJsApi',
+            'scanQRCode'
+        ]
+    });
+
+    wx.ready(function () {
+        wx.checkJsApi({
+            jsApiList: [
+                'scanQRCode'
+            ],
+            success: function (res) {
+                if (res.checkResult.getLocation == false) {
+                    alert('你的微信版本太低，不支持微信JS接口，请升级到最新的微信版本！');
+                    return
+                }
+            }
+        });
+        $('#scan').click(function(){
+            wx.scanQRCode({
+                needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+                scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+                success: function (res) {
+                    console.log(res);
+                }
+            });
+        })
+    })
+
+</script>
+<div class="weui-footer" style="margin-top: 20px;">
+    <!-- <p class="weui-footer__text">Copyright © 2016-2018 罗雅光</p>-->
+</div>
+
+</body>
+</html>
