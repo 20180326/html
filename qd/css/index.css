@@ -1,5 +1,9 @@
-.index,.game-rules,.info,.rank,.test {
+.index,.game-rules,.info {
     background: url("../image/index-bg.png") no-repeat;
+    background-size: 100% 100%;
+}
+.test,.rank {
+	 background: url("../image/test-bg1.png") no-repeat;
     background-size: 100% 100%;
 }
 .index *,.game-rules *,.info *,.rank * ,.test *{
@@ -154,6 +158,7 @@
 .index-wrap-day {
     position: relative;
     height: 280px;
+    padding-right: 10px;
 }
 .index-wrap-progress {
     position: absolute;
@@ -649,7 +654,6 @@
     display: none;
 }
 .wrap-test-yindao2 {
-    display: block;
     z-index: 12;
 }
 .text-yindao2-icon {
