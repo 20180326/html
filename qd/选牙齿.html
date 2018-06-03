@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">
+    <title>主页</title>
+    <link rel="stylesheet" href="css/lib/weui.min.css">
+    <link rel="stylesheet" href="css/lib/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jquery-weui.min.js"></script>
+</head>
+<body class="test-all-done">
+<div class="wrap-test-all-done" style="padding: 30px 0 20px">
+    <div class="wrap-tooth-status">
+        <img src="" alt="">
+        <p class="wrap-tooth-status-tip text-shadow">点击牙齿，选择症状</p>
+    </div>
+    <div class="wrap-question-btn text-center">
+        <!--可以点击状态加ON-->
+        <span class="btn-prev on">上一页</span>
+        <span class="btn-next on">下一页</span>
+    </div>
+</div>
+
+<!--选择弹窗-->
+<div class="wrap-choose-tooth-status flex flex-j-c flex-a-c">
+    <div class="choose-tooth-status-bg">
+        <span class="btn-close-choose-tooth"></span>
+        <p class="text-shadow text-center font-20">选择症状</p>
+        <div class="choose-tooth-item flex flex-j-c flex-a-c">
+            <span class="tooth-status1">缺失</span>
+        </div>
+        <div class="choose-tooth-item flex flex-j-c flex-a-c">
+            <span class="tooth-status2">蛀牙</span>
+        </div>
+        <div class="choose-tooth-item flex flex-j-c flex-a-c">
+            <span class="tooth-status3">假牙</span>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    $(function () {
+        var wHeight = $(window).height();
+        $('body').css({height: wHeight + 'px'});
+
+        $('.choose-tooth-item').on('click', function () {
+            $('.choose-tooth-item').removeClass('on');
+           $(this).addClass('on');
+        });
+        $('.wrap-choose-tooth-status,.btn-close-choose-tooth').on('click', function () {
+           $('.wrap-choose-tooth-status').hide();
+        });
+        $('.wrap-tooth-status').on('click', function () {
+           $('.wrap-choose-tooth-status').css({'display': 'flex'});
+        });
+        $('.choose-tooth-status-bg').on('click', function (e) {
+            e.stopPropagation();
+        })
+    });
+</script>
+</html>

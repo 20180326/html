@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">
+    <title>主页</title>
+    <link rel="stylesheet" href="css/lib/weui.min.css">
+    <link rel="stylesheet" href="css/lib/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jquery-weui.min.js"></script>
+</head>
+<body class="test-all-done">
+<div class="wrap-test-all-done" style="padding: 30px 0 20px">
+    <h3 class="text-center text-shadow" style="font-size: 24px;">正确的牙刷摆放</h3>
+    <div class="wrap-question-rules">
+        <div class="wrap-tooth-img">
+            <img src="" alt="">
+        </div>
+        <p class="text-center text-shadow" style="font-size: 15px">刷头朝上（1/6）</p>
+        <p class="text-center font-12" style="color: #3A230A;margin-top: 5px;">当我们使用牙刷当我们使用牙刷当我们使用牙刷当我们使
+            用牙刷当我们使用牙刷当我们使用牙刷</p>
+    </div>
+    <div class="wrap-question-btn text-center">
+        <!--可以点击状态加ON-->
+        <span class="btn-prev on">上一页</span>
+        <span class="btn-next on">下一页</span>
+    </div>
+</div>
+</body>
+<script>
+    $(function () {
+        var wHeight = $(window).height();
+        $('body').css({height: wHeight + 'px'});
+
+    });
+</script>
+</html>

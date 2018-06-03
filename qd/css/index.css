@@ -1,4 +1,4 @@
-.index,.game-rules,.info {
+.index,.game-rules,.info,.test-detail,.test-all-done,.wrap-question {
     background: url("../image/index-bg.png") no-repeat;
     background-size: 100% 100%;
 }
@@ -6,7 +6,7 @@
 	 background: url("../image/test-bg1.png") no-repeat;
     background-size: 100% 100%;
 }
-.index *,.game-rules *,.info *,.rank * ,.test *{
+.index *,.game-rules *,.info *,.rank * ,.test *,.test-detail *,.test-all-done *,.wrap-question *{
     color: #fff;
 }
 .index-header {
@@ -643,7 +643,7 @@
     margin-left: 120px;
 }
 
-.wrap-index-yindao,.wrap-test-yindao1,.wrap-test-yindao2 {
+.wrap-index-yindao,.wrap-test-yindao1,.wrap-test-yindao2,.wrap-yindao-test-detail,.wrap-index-test-done,.wrap-index-nosiginin,.wrap-choose-tooth-status {
     position: fixed;
     top: 0;
     left: 0;
@@ -726,6 +726,381 @@
     background-size: 100% 100%;
 }
 
+/*任务详情*/
+.test-detail-bg {
+    position: relative;
+    width: 303px;
+    min-height: 260px;
+    background: url("../image/test-detail-bg.png") no-repeat;
+    background-size: 100% 100%;
+    margin: 60px auto 0;
+    padding-bottom: 20px;
+}
+.wrap-test-zao-bg,.wrap-test-wan-bg {
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    background: url("../image/zao-bg.png") no-repeat;
+    background-size: cover;
+}
+.wrap-test-zao-bg p,.wrap-test-wan-bg p {
+    padding: 0 5px;
+}
+.wrap-test-wan-bg {
+    background-image: url("../image/wan-bg.png");
+    margin-left: 10px;
+}
+.test-sign {
+    display: inline-block;
+    width: 60px;
+    height: 24px;
+    line-height: 22px;
+    background: url("../image/signin.png") no-repeat;
+    background-size: 100% 100%;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.test-sign.on {
+    background-image: url("../image/signin-on.png");
+}
+.test-detail-goinidex {
+    width: 158px;
+    height: 50px;
+    line-height: 50px;
+    background: url("../image/goindex.png") no-repeat;
+    background-size: cover;
+    margin: 20px auto 0;
+    text-align: center;
+    font-size: 18px;
+}
+.wrap-test-detail-fujia {
+    width: 250px;
+    height: 50px;
+    background: url("../image/test-nodone.png") no-repeat;
+    background-size: cover;
+    padding: 0 10px;
+    margin: 10px auto;
+}
+.wrap-test-detail-fujia.on {
+    background-image: url("../image/test-done.png");
+}
+.test-detail-nodone {
+    padding-left: 13px;
+    background: url("../image/yaoshi.png") no-repeat;
+    background-size: 8px 13px;
+    background-position: left center;
+}
+.wrap-yindao-test-detail-icon {
+    width: 100%;
+    margin-top: 160px;
+}
+.wrap-yindao-test-detail-icon span {
+    display: inline-block;
+    width: 23px;
+    height: 17px;
+    background: url("../image/up.png") no-repeat;
+    background-size: cover;
+
+}
+.wrap-yindao-test-detail-icon span:last-child {
+    margin-left: 110px;
+}
+.test-signin-time {
+    display: inline-block;
+    padding-left: 20px;
+    background: url("../image/signin-gou.png") no-repeat;
+    background-size: 17px 15px;
+    background-position: left center;
+    font-size: 15px;
+}
+.test-signin-suc {
+    position: absolute;
+    right: 20px;
+    top: 35px;
+    display: inline-block;
+    width: 54px;
+    height: 45px;
+    background: url("../image/signin-suc.png") no-repeat;
+    background-size: cover;
+}
+
+/*打卡签到完成*/
+.wrap-signin-done-bg{
+    width: 303px;
+    height: 227px;
+    background: url("../image/signin-done-bg.png") no-repeat;
+    background-size: cover;
+    margin: 60px auto;
+}
+.signin-done-icon {
+    display: inline-block;
+    width: 116px;
+    height: 100px;
+    background: url("../image/signin-suc-icon.png") no-repeat;
+    background-size: cover;
+    margin-top: -15px;
+}
+.wrap-siginin-tip {
+    width:250px;
+    height:88px;
+    background:rgba(255,246,216,1);
+    box-shadow:1px 2px 1px rgba(0,0,0,0.15);
+    margin: 20px auto 0;
+    padding: 10px;
+}
+
+/*完成挑战*/
+.wrap-test-all-done {
+    margin: 30px 15px;
+    background-color: rgba(255,255,255,.5);
+    padding-top: 15px;
+}
+.test-all-done-icon {
+    width: 168px;
+    height: 60px;
+    background: url("../image/test-all-done-icon.png") no-repeat;
+    background-size: cover;
+    margin:  auto;
+}
+.test-all-done-icon1 {
+    width: 153px;
+    height: 225px;
+    background: url("../image/tes-all-done-icon1.png") no-repeat;
+    background-size: cover;
+    margin: 20px auto;
+}
+.test-all-done-btn {
+    margin-top: 25px;
+    padding-bottom: 25px;
+}
+.test-all-done-btn span {
+    display: inline-block;
+    width: 128px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    background: url("../image/test-all-done-xuanyao.png") no-repeat;
+    background-size: cover;
+}
+.test-all-done-btn span:last-child {
+    background-image: url("../image/test-all-done-wancheng.png");
+    margin-left: 20px;
+}
+.wrap-nosignin-icon {
+    display: inline-block;
+    width: 89px;
+    height: 100px;
+    background: url("../image/nosigniin.png") no-repeat;
+    background-size: cover;
+    margin-top: 30px;
+}
+.wrap-nosignin-tip {
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+}
+
+/*问卷说明*/
+.wrap-question-rules {
+    padding: 20px;
+    font-size: 15px;
+    height: 430px;
+    overflow-y: scroll;
+}
+
+.btn-prev,.btn-next {
+    display: inline-block;
+    width: 128px;
+    height: 50px;
+    line-height: 50px;
+    background: url("../image/question-no-btn.png") no-repeat;
+    background-size: cover;
+}
+.btn-next {
+    margin-left: 25px;
+}
+.btn-next.on {
+    background-image: url("../image/test-all-done-wancheng.png");
+}
+.btn-prev.on {
+    background-image: url("../image/test-all-done-xuanyao.png");
+}
+.wrap-question-answer {
+    height:50px;
+    border-radius: 4px;
+    background:rgba(245,235,200,1);
+    box-shadow:1px 1px 1px rgba(0,0,0,0.15);
+    padding: 0 10px;
+    margin-top: 10px;
+}
+.question-answer-icon {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    background: url("../image/no-choose.png") no-repeat;
+    background-size: cover;
+}
+.question-answer-icon.on {
+    background-image: url("../image/answer-choose.png");
+}
+.test-all-done .wrap-nosignin-icon {
+    background-image: url("../image/question-suc.png");
+}
+.wrap-question .question-answer-icon.on {
+    background-image: url("../image/answer-true.png");
+}
+.wrap-question .question-answer-icon.error {
+    background-image: url("../image/answer-error.png");
+}
+.question-all-done-icon1 {
+    width: 175px;
+    height: 225px;
+    background: url("../image/question-all-done.png") no-repeat;
+    background-size: cover;
+    margin: 20px auto;
+}
+.wrap-question-rules .tooth-color {
+    width: 284px;
+    height: 53px;
+    background: url("../image/jiebai.png") no-repeat;
+    background-size: cover;
+    line-height: 53px;
+    color: #3A230A;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px auto 0;
+}
+.wrap-question-rules .tooth-color:nth-child(2) {
+    background-image: url("../image/huangya1.png");
+}
+.wrap-question-rules .tooth-color:nth-child(3) {
+    background-image: url("../image/huangya2.png");
+}
+.wrap-question-rules .tooth-color:nth-child(4) {
+    background-image: url("../image/huangya3.png");
+}
+.wrap-question-rules .tooth-color.on {
+    border: 1px solid #FEB522;
+    border-radius: 4px;
+}
+.wrap-tooth-img {
+    position: relative;
+    width: 245px;
+    height: 245px;
+    background-color: #ffffff;
+    margin: 20px auto;
+}
+.wrap-quewtion-img img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+.tooth-img-suc {
+    display: inline-block;
+    width: 86px;
+    height: 86px;
+    background: url("../image/up-suc.png") no-repeat;
+    background-size: cover;
+}
+.tooth-up-tip {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    font-size: 15px;
+}
+.wrap-tooth-up-img {
+    border: 3px solid #FEB522;
+    margin: 50px auto;
+}
+.wrap-tooth-status {
+    position: relative;
+    background-color: red;
+    min-height: 450px;
+    margin-bottom: 20px;
+}
+.wrap-tooth-status-tip {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    text-align: center;
+}
+.choose-tooth-status-bg {
+    position: relative;
+    width: 303px;
+    height: 262px;
+    background: url("../image/choose-tooth-bg.png") no-repeat;
+    background-size: cover;
+    padding-top: 15px;
+}
+.btn-close-choose-tooth {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: url("../image/close-tooth.png") no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: -12px;
+    right: -12px;
+}
+.choose-tooth-item {
+    width: 244px;
+    height: 44px;
+    background-color: #E2BC80;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    margin: 15px auto 0;
+}
+.choose-tooth-item.on {
+    border-color: #FEB522;
+}
+.tooth-status1,.tooth-status3,.tooth-status2 {
+    display: inline-block;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 35px;
+    background: url("../image/queshi.png") no-repeat;
+    background-size: 27px 27px;
+    background-position: left center;
+}
+.tooth-status3 {
+    background-image: url("../image/jiaya.png");
+}
+.tooth-status2 {
+    background-image: url("../image/zhuya.png");
+    background-size: 27px 32px;
+}
+.range-bar {
+    height: 18px;
+    background-color: #fff;
+}
+.range-quantity {
+    background-color: #B7D200;
+    box-sizing: unset;
+    padding-left: 20px;
+}
+.range-handle {
+    background: url("../image/rank.png") no-repeat;
+    background-size: 100% 100%;
+    top: -6px;
+}
+.range-min, .range-max {
+    font-size: 20px;
+    top: -11px;
+    width: auto;
+}
+.range-max {
+    right: -46px;
+}
+
+
+
 /*兼容iphone5*/
 @media screen and (max-width: 330px) {
     .index-kuang{width: 210px;}
@@ -749,6 +1124,23 @@
     }
     .hot-ball-icon {
         margin-top: 10px;
+    }
+    .wrap-signin-done-bg {
+        margin: 20px auto;
+    }
+    .wrap-test-all-done {
+        margin: 15px;
+        padding-top: 10px;
+    }
+    .test-all-done-btn {
+        margin-top: 10px;
+        padding-bottom: 10px;
+    }
+    .test-all-done-icon1 {
+        margin: 10px auto;
+    }
+    .wrap-question-rules {
+        height: 350px;
     }
 }
 

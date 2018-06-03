@@ -24,6 +24,10 @@ body, html {
     float: right;
 }
 
+.margin-5 {
+    margin-top: 5px;
+}
+
 .margin-15 {
     margin-top: 15px;
 }
@@ -49,6 +53,12 @@ body, html {
 }
 .font-13 {
     font-size: 13px;
+}
+.font-15 {
+    font-size: 15px;
+}
+.font-20 {
+    font-size: 20px;
 }
 
 .hide {
@@ -111,4 +121,12 @@ body{
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
+}
+
+.text-shadow {
+    text-shadow: 2px 0 2px #3A230A;
+}
+
+.text-shadow-none {
+    text-shadow: none;
 }

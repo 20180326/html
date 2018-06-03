@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">
+    <title>主页</title>
+    <link rel="stylesheet" href="css/lib/weui.min.css">
+    <link rel="stylesheet" href="css/lib/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jquery-weui.min.js"></script>
+    <script src="js/lib/clipboard.min.js"></script>
+</head>
+<body class="test-all-done">
+<div class="wrap-test-all-done" style="padding: 30px 0 10px">
+    <h3 class="text-center" style="font-size: 24px;">问卷</h3>
+    <div class="wrap-question-rules">
+        <p style="font-size: 24px;">第一题</p>
+        <p>当前你每天刷牙多少次？</p>
+        <div class="wrap-question-answer flex flex-j-s flex-a-c">
+            <span>0次</span>
+            <span class="question-answer-icon"></span>
+        </div>
+        <div class="wrap-question-answer flex flex-j-s flex-a-c">
+            <span>0次</span>
+            <span class="question-answer-icon"></span>
+        </div>
+        <div class="wrap-question-answer flex flex-j-s flex-a-c">
+            <span>0次</span>
+            <span class="question-answer-icon on"></span>
+        </div>
+    </div>
+    <div class="wrap-question-btn text-center">
+        <!--可以点击状态加ON-->
+        <span class="btn-prev on">上一题</span>
+        <span class="btn-next on">下一题</span>
+        <p class="font-12 text-center" style="color: #000;margin-top: 10px">第1题／共5题</p>
+    </div>
+</div>
+<!--完成答卷弹窗-->
+<div class="wrap-index-nosiginin flex flex-a-c flex-j-c flex-c">
+    <div class="wrap-signin-done-bg text-center">
+        <span class="wrap-nosignin-icon"></span>
+        <p class="wrap-nosignin-tip" style="font-size: 18px;">任务完成</p>
+    </div>
+</div>
+</body>
+<script>
+    $(function () {
+        var wHeight = $(window).height();
+        $('body').css({height: wHeight + 'px'});
+
+        // 问卷点击
+        $('.wrap-question-answer').on('click', function () {
+            $('.question-answer-icon').removeClass('on');
+           $(this).find('.question-answer-icon').addClass('on');
+        });
+    });
+</script>
+</html>

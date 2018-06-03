@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">
+    <title>主页</title>
+    <link rel="stylesheet" href="css/lib/weui.min.css">
+    <link rel="stylesheet" href="css/lib/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jquery-weui.min.js"></script>
+    <script src="js/lib/clipboard.min.js"></script>
+</head>
+<body class="test-detail">
+    <div class="hot-ball-icon"></div>
+    <span class="btn-back-icon"></span>
+    <div class="test-detail-bg">
+        <!--签到完成的图标-->
+        <span class="test-signin-suc"></span>
+
+        <div class="text-center wrap-game-rules-title" >
+            <span class="game-rules-title">第一天</span>
+        </div>
+        <p class="text-center font-12 ">选择任务，开始挑战</p>
+        <div class="text-center margin-15 flex flex-j-c">
+            <div class="wrap-test-zao-bg ">
+                <p class="font-12 margin-15">早间刷牙打卡</p>
+                <p class="font-12 margin-15" style="color: #3A230A;">早晨5:00-8:00可打卡</p>
+                <!--<span class="test-sign">签到</span>-->
+                <!--已签到显示的-->
+                <span class="test-signin-time">6:13</span>
+            </div>
+            <div class="wrap-test-wan-bg">
+                <p class="font-12 margin-15">夜间刷牙打卡</p>
+                <p class="font-12 margin-15">夜晚20:00-23:00可打卡</p>
+                <!--<span class="test-sign on">签到</span>-->
+                <!--已签到显示的-->
+                <span class="test-signin-time">22:13</span>
+            </div>
+        </div>
+        <!--已解锁加class＝on-->
+        <div class="wrap-test-detail-fujia flex flex-a-c flex-j-s">
+            <span class="font-13">附加任务</span>
+            <span class="font-12 test-detail-nodone">未解锁</span>
+        </div>
+        <!--<div class="wrap-test-detail-fujia on flex flex-a-c flex-j-s">-->
+            <!--<span class="font-13">附加任务</span>-->
+            <!--<span class="font-12 test-detail-nodone">已解锁</span>-->
+        <!--</div>-->
+    </div>
+    <p class="test-detail-goinidex">回到首页</p>
+    <div class="game-footer-icon"></div>
+
+    <!--指引-->
+    <!--显示的情况下用 style="display: flex"-->
+    <div class="wrap-yindao-test-detail flex flex-j-c flex-a-c">
+        <p class="font-12">如果前一天未完成两次打卡，需要重新累计打卡天数</p>
+    </div>
+    <!--显示的情况下用 style="display: block"-->
+    <div class="wrap-yindao-test-detail">
+        <p class="font-12 text-center" style="padding: 0 20px;margin-top: 200px;">在规定时间内，点击【签到】可分别进行早间、夜间打卡  早晨5:00-8:00，夜晚20:00-23:00可签到</p>
+        <div class="text-center wrap-yindao-test-detail-icon">
+            <span></span>
+            <span></span>
+        </div>
+        <p class="text-center font-12 margin-30">非规定时间无法点击【签到】</p>
+    </div>
+</body>
+<script>
+    $(function () {
+        var wHeight = $(window).height();
+        $('body').css({height: wHeight + 'px'});
+        $('.wrap-yindao-test-detail').on('click', function(){
+            $('.wrap-yindao-test-detail').hide();
+        });
+
+    });
+</script>
+</html>

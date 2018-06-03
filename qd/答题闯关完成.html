@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">
+    <title>主页</title>
+    <link rel="stylesheet" href="css/lib/weui.min.css">
+    <link rel="stylesheet" href="css/lib/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jquery-weui.min.js"></script>
+    <script src="js/lib/clipboard.min.js"></script>
+</head>
+<body class="test-all-done">
+    <div class="wrap-test-all-done">
+        <div class="test-all-done-icon"></div>
+        <p class="text-center text-shadow" style="font-size: 36px;margin-top: 15px;">闯关完成</p>
+        <div class="question-all-done-icon1"></div>
+        <p class="text-center text-shadow" style="font-size: 15px;">你一共答对了6道题，你超过了</p>
+        <p class=" text-center margin-5 text-shadow" style="font-size: 15px"><span style="font-size:27px;color: #FEBE29;margin-right: 5px;">89%</span>的用户</p>
+        <div class="text-center test-all-done-btn">
+            <span>炫耀</span>
+            <span>完成</span>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(function () {
+        var wHeight = $(window).height();
+        $('body').css({height: wHeight + 'px'});
+
+    });
+</script>
+</html>

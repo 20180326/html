@@ -154,6 +154,30 @@
             <span></span>
         </div>
     </div>
+
+    <!--活动结束引导-->
+    <!--显示用 style="display: flex"-->
+    <div class="wrap-index-test-done flex flex-a-c flex-j-c">
+        <p style="font-size: 24px">本期活动已结束</p>
+        <div class="flex index-footer">
+       <span>
+            资料
+        </span>
+            <span>背包</span>
+            <span >任务</span>
+            <span>排名</span>
+            <span class="showAbout">关于</span>
+        </div>
+    </div>
+
+    <!--未签到弹窗-->
+    <div class="wrap-index-nosiginin flex flex-a-c flex-j-c flex-c">
+        <div class="wrap-signin-done-bg text-center">
+            <span class="wrap-nosignin-icon"></span>
+            <p class="wrap-nosignin-tip">您在6月3日没有按时签到 <br> 需要重新进行“第三天”签到</p>
+        </div>
+        <p class="test-detail-goinidex">确定</p>
+    </div>
 </body>
 <script>
     $(function(){
@@ -170,6 +194,9 @@
         function closeAbout () {
             $('.wrap-about-layout').hide();
         };
+        $('.wrap-index-test-done,.wrap-index-yindao,.wrap-first-layout,.test-detail-goinidex').on('click', function () {
+           $(this).hide();
+        });
     });
 </script>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">
+    <title>主页</title>
+    <link rel="stylesheet" href="css/lib/weui.min.css">
+    <link rel="stylesheet" href="css/lib/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/jquery-weui.min.js"></script>
+</head>
+<body class="test-all-done">
+<div class="wrap-test-all-done" style="padding: 30px 0 20px">
+    <h3 class="text-center text-shadow" style="font-size: 24px;">上传照片</h3>
+    <p class="text-center text-shadow" style="font-size: 15px;">正确摆放家中牙刷，并拍照上传</p>
+    <div class="wrap-question-rules ">
+        <div class="wrap-tooth-img flex flex-a-c flex-j-c wrap-tooth-up-img">
+            <img src="" alt="">
+            <span class="tooth-img-suc"></span>
+            <p class="text-center tooth-up-tip text-shadow">点击这里上传</p>
+        </div>
+    </div>
+    <div class="wrap-question-btn text-center">
+        <!--可以点击状态加ON-->
+        <span class="btn-prev on">上一页</span>
+        <span class="btn-next on">提交</span>
+    </div>
+</div>
+</body>
+<script>
+    $(function () {
+        var wHeight = $(window).height();
+        $('body').css({height: wHeight + 'px'});
+
+    });
+</script>
+</html>
