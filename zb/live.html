@@ -84,7 +84,7 @@ to{opacity:1}
 to{opacity:1}
 }
 .fadeIn{-webkit-animation:fadeIn ease .8s;animation:fadeIn ease .8s;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards}
-
+.count-down{padding: 10px 0;text-align: center;background-color: #75dbd4;font-size: 12px;}
 
 </style>
 <style type="text/css">
@@ -93,7 +93,7 @@ to{opacity:1}
 </head>
 <body style="margin:0">
 <!--视频 -->
-
+<p class="count-down">距离直播开始还有：<em></em></p>
 <div class="video-div" id="id_test_video">
     <div class="vcp-player touchable vcp-playing" style="width: 100%;height: 100%">
 <!--         <video preload="auto" autoplay="true" webkit-playsinline="" playsinline="" x-webkit-airplay="allow" x5-video-orientation="undefined" src="./WeChatSight5084.mp4" style="width: 100%; background:url(http://img05.tooopen.com/images/20150820/tooopen_sy_139205349641.jpg) center no-repeat; background-size:100% 100%;"></video> -->
@@ -292,6 +292,52 @@ to{opacity:1}
         }
     }
 
+     var countDown;
+     //开始时间，结束时间，当前时间
+     function getCountDown(begin, end, unix_timestamp){
+            clearInterval(countDown);
+            countDown = setInterval(function(){
+                //结束时间和当前的时间差
+                var t = end - unix_timestamp;
+                var d = Math.floor(t/60/60/24);
+
+                var hour = Math.floor(t/60/60%24);
+                var min = Math.floor(t/60%60);
+                var sec = Math.floor(t%60);
+
+                if (hour < 10) {
+                    hour = "0" + hour;
+                }
+                if (min < 10) {
+                    min = "0" + min;
+                }
+                if (sec < 10) {
+                    sec = "0" + sec;
+                }
+
+                if(unix_timestamp < begin){
+                    $('.count-down em').text('活动还未开始');
+                }else{
+                    if(t <= 0){
+                        $('.count-down em').text('活动已结束');
+                    }else{
+                        $('.count-down em').text(d+'天'+hour+'时'+min+'分'+sec+'秒');
+                    }
+                }
+                unix_timestamp++;
+            },1000);
+        };
+
+        function showCount () {
+            $('.count-down').show();
+        }
+
+        function hideCount () {
+            $('.count-down').hide();
+        }
+
+
+
     $(function(){
         console.log('ready')
         $(window).on('orientationchange', function(e){
@@ -303,6 +349,8 @@ to{opacity:1}
                 $('.video-div').removeClass('video-qp')
             }
         })
+
+         getCountDown(1529820160,1529828160,1529821060);
     })
 </script>
 </html>
